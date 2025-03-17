@@ -96,4 +96,16 @@ public class MemoryPhongHocDatabase {
 	    }
 	    return null; // Trả về null nếu không tìm thấy
 	}
+	
+	static ArrayList<PhongHocLyThuyet> getDanhSachPhongHocLyThuyet() {
+        return dataBasePhongHocLyThuyet;
+    }
+    
+    static ArrayList<PhongHocMayTinh> getDanhSachPhongHocMayTinh() {
+        return dataBasePhongHocMayTinh;
+    }
+    
+    static ArrayList<PhongHocThiNghiem> getDanhSachPhongHocThiNghiem() {
+        return dataBasePhongHocThiNghiem;
+    }
 }
