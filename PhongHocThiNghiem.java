@@ -45,7 +45,8 @@ public class PhongHocThiNghiem extends PhongHoc {
 		this.bonRua = bonRua;
 	}
 	
-	boolean datChuan() {
+	@Override // kiểm tra ghi đè 
+	boolean datChuan() { //// cài đặt lại thân method (body of method)
 		int soBongDenCanThiet = (int) Math.ceil(dienTich / 10); // làm tròn và ép về kiểu int
         return soBongDen >= soBongDenCanThiet && bonRua;
 	}

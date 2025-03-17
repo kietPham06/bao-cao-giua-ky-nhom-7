@@ -25,7 +25,8 @@ public class PhongHocMayTinh extends PhongHoc {
 		this.soLuongMayTinh = soLuongMayTinh;
 	}
 	
-	boolean datChuan() {
+	@Override // kiểm tra ghi đè
+	boolean datChuan() { // cài đặt lại thân method (body of method)
 		int soBongDenCanThiet = (int) Math.ceil(dienTich / 10); // làm tròn lên và ép về kiểu int
 		int soLuongMayTinhCanThiet = (int) Math.ceil(dienTich / 1.5); // làm tròn lên và ép về kiểu int
         return soBongDen >= soBongDenCanThiet && soLuongMayTinh >= soLuongMayTinhCanThiet;
