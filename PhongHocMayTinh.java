@@ -31,4 +31,11 @@ public class PhongHocMayTinh extends PhongHoc {
 		int soLuongMayTinhCanThiet = (int) Math.ceil(dienTich / 1.5); // làm tròn lên và ép về kiểu int
         return soBongDen >= soBongDenCanThiet && soLuongMayTinh >= soLuongMayTinhCanThiet;
 	}
+	
+	public String toString() {
+		return "Mã phòng: " + maPhong + "\n" +
+		           "Dãy nhà: " + dayNha + "\n" +
+		           "Số bóng đèn: " + soBongDen + "\n" +
+		           "Số lượng máy tính: " + soLuongMayTinh + "\n";
+	}
 }

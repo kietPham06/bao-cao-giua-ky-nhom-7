@@ -51,6 +51,13 @@ public class PhongHocThiNghiem extends PhongHoc {
         return soBongDen >= soBongDenCanThiet && bonRua;
 	}
 	
-	
+	public String toString() {
+		return "Mã phòng: " + maPhong + "\n" +
+		           "Dãy nhà: " + dayNha + "\n" +
+		           "Số bóng đèn: " + soBongDen + "\n" +
+		           "Chuyên ngành: " + chuyenNganh + "\n" +
+		           "Sức chứa: " + sucChua + "\n" +
+		           "Bổn rửa: " + bonRua + "\n";
+	}
 	
 }

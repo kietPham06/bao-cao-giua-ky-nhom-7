@@ -92,4 +92,13 @@ public class PhongHoc {
         return soBongDen >= soBongDenCanThiet;
     }
     
+	@Override
+	public String toString() {
+		return "Mã phòng: " + maPhong + "\n" +
+		           "Dãy nhà: " + dayNha + "\n" +
+		           "Số bóng đèn: " + soBongDen;
+	}
+    
+    
+    
 }

@@ -30,5 +30,15 @@ public class PhongHocLyThuyet extends PhongHoc {
 		int soBongDenCanThiet = (int) Math.ceil(dienTich / 10); // làm tròn và ép về kiểu int
         return soBongDen >= soBongDenCanThiet && mayChieu;
 	}
+
+	@Override
+	public String toString() {
+		return "Mã phòng: " + maPhong + "\n" +
+		           "Dãy nhà: " + dayNha + "\n" +
+		           "Số bóng đèn: " + soBongDen + "\n" +
+		           "Máy chiếu: " + mayChieu + "\n";
+	}
+	
+	
 	
 }
