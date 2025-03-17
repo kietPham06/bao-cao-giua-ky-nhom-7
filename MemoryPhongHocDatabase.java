@@ -1,11 +1,12 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class MemoryPhongHocDatabase {
 	// ô 2 - biến static
 	static ArrayList<PhongHocLyThuyet> dataBasePhongHocLyThuyet = new ArrayList<PhongHocLyThuyet>();
 	static ArrayList<PhongHocMayTinh> dataBasePhongHocMayTinh = new ArrayList<PhongHocMayTinh>();
 	static ArrayList<PhongHocThiNghiem> dataBasePhongHocThiNghiem = new ArrayList<PhongHocThiNghiem>();
-	
+	static ArrayList<PhongHoc> dsPKDC = new ArrayList<>();
 	// ô 3
 	static void addPhongHocLyThuyet(PhongHocLyThuyet phongHoc) {
 		dataBasePhongHocLyThuyet.add(phongHoc);
