@@ -12,6 +12,7 @@ public class PhongHocMenu {
 	// Chức năng
 	PhongHocInput phongHocInput;
 	RemovePhongHoc removePhongHoc;
+	DanhSachPhongHocControl danhSachPhongHocControl;
 	
 	
 	//Ô 3
@@ -23,6 +24,7 @@ public class PhongHocMenu {
 		// Chức năng
 		phongHocInput = new PhongHocInput();
 		removePhongHoc = new RemovePhongHoc();
+		danhSachPhongHocControl = new DanhSachPhongHocControl();
 		
 	}
 	
@@ -40,6 +42,11 @@ public class PhongHocMenu {
 	 PhongHocMenu(PrintWriter out, Scanner keyboard, String prompt, PhongHocInput phongHocInput, RemovePhongHoc removePhongHoc) {
 			this(out, keyboard, prompt, phongHocInput);
 			this.removePhongHoc = removePhongHoc;
+		}
+	 
+	 PhongHocMenu(PrintWriter out, Scanner keyboard, String prompt, PhongHocInput phongHocInput, RemovePhongHoc removePhongHoc, DanhSachPhongHocControl danhSachPhongHocControl) {
+			this(out, keyboard, prompt, phongHocInput, removePhongHoc);
+			this.danhSachPhongHocControl = danhSachPhongHocControl;
 		}
 
 	
@@ -108,7 +115,7 @@ public class PhongHocMenu {
 			}
 			
 			if("print".equalsIgnoreCase(command)) {
-				
+				print();
 				continue;
 			}
 			
@@ -116,6 +123,11 @@ public class PhongHocMenu {
 				
 				continue;
 			}
+			
+			if("count".equalsIgnoreCase(command)) {
+				
+				continue;
+			}			
 			
 			if("avg".equalsIgnoreCase(command)) {
 				
@@ -127,34 +139,6 @@ public class PhongHocMenu {
 			}
 			
 		}
-	}
-	
-	void add() {
-		phongHocInput.input();
-	}
-
-	void edit() {
-		
-	}
-	
-	void delete() {
-		removePhongHoc.removePhongHoc();
-	}
-	
-	void find() {
-		
-	}
-	
-	void print() {
-		
-	}
-	
-	void export() {
-		
-	}
-	
-	void average() {
-		
 	}
 	
 	void help() {
@@ -190,6 +174,38 @@ public class PhongHocMenu {
 	    out.println("============================================");
 	    out.flush();
 	    
+	}
+	
+	void add() {
+		phongHocInput.input();
+	}
+
+	void edit() {
+		
+	}
+	
+	void delete() {
+		removePhongHoc.removePhongHoc();
+	}
+	
+	void find() {
+		
+	}
+	
+	void print() {
+		danhSachPhongHocControl.printDanhSachPhongHoc();
+	}
+	
+	void export() {
+		
+	}
+	
+	void count() {
+		
+	}
+	
+	void average() {
+		
 	}
 
 }

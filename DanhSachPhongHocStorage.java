@@ -1,13 +1,25 @@
-package QuanLyTruongDaiHoc;
+import java.util.ArrayList;
 
 public class DanhSachPhongHocStorage {
-	MemoryPhongHocDatabase danhSachStorage;
+	
+	//Ô 2
+	
+	
+	// Ô 3
+    DanhSachPhongHocStorage() {
+		
+	}
     
-    public DanhSachPhongHocStorage(MemoryPhongHocDatabase storage) {
-        this.danhSachStorage = storage;
+    ArrayList<PhongHocLyThuyet> getDanhSachPhongHocLyThuyet() {
+    	return MemoryPhongHocDatabase.getDanhSachPhongHocLyThuyet();
     }
     
-    public MemoryPhongHocDatabase getStorage() {
-        return danhSachStorage;
+    ArrayList<PhongHocMayTinh> getDanhSachPhongHocMayTinh() {
+    	return MemoryPhongHocDatabase.getDanhSachPhongHocMayTinh();
     }
+    
+    ArrayList<PhongHocThiNghiem> getDanhSachPhongHocThiNghiem() {
+    	return MemoryPhongHocDatabase.getDanhSachPhongHocThiNghiem();
+    }
+    
 }
