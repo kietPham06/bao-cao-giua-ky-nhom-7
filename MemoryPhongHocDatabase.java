@@ -7,7 +7,7 @@ public class MemoryPhongHocDatabase {
 	static ArrayList<PhongHocLyThuyet> dataBasePhongHocLyThuyet = new ArrayList<PhongHocLyThuyet>();
 	static ArrayList<PhongHocMayTinh> dataBasePhongHocMayTinh = new ArrayList<PhongHocMayTinh>();
 	static ArrayList<PhongHocThiNghiem> dataBasePhongHocThiNghiem = new ArrayList<PhongHocThiNghiem>();
-	static ArrayList<PhongHoc> dataBasePhongHoc = new ArrayList<PhongHoc>();
+	static ArrayList<PhongHoc> dataBasePKDC = new ArrayList<>();
 	
 	// Ô 3
 	//INSERT
@@ -61,30 +61,46 @@ public class MemoryPhongHocDatabase {
     }
 	
 	//UPDATE
-	static void setPhongHocLyThuyet(String maPhong, PhongHocLyThuyet phongHocMoi) {
-		for (int i = 0; i < dataBasePhongHocLyThuyet.size(); i++) {
-	        if (dataBasePhongHocLyThuyet.get(i).getMaPhong().equals(maPhong)) {
-	            dataBasePhongHocLyThuyet.set(i, phongHocMoi);
-	            break; // Thoát khỏi vòng lặp ngay sau khi cập nhật
-	        }
-	    }
-	}
-	static void setPhongHocMayTinh(String maPhong, PhongHocMayTinh phongHocMoi) {
-		for (int i = 0; i < dataBasePhongHocMayTinh.size(); i++) {
-	        if (dataBasePhongHocMayTinh.get(i).getMaPhong().equals(maPhong)) {
-	            dataBasePhongHocMayTinh.set(i, phongHocMoi);
-	            break; // Thoát khỏi vòng lặp ngay sau khi cập nhật
-	        }
-	    }
-	}
-	static void setPhongHocThiNghiem(String maPhong, PhongHocThiNghiem phongHocMoi) {
-		for (int i = 0; i < dataBasePhongHocThiNghiem.size(); i++) {
-	        if (dataBasePhongHocThiNghiem.get(i).getMaPhong().equals(maPhong)) {
-	            dataBasePhongHocThiNghiem.set(i, phongHocMoi);
-	            break; // Thoát khỏi vòng lặp ngay sau khi cập nhật
-	        }
-	    }
-	}
+    static void setPhongHocLyThuyet(String maPhong, PhongHocLyThuyet phongHocMoi) {
+        PhongHocLyThuyet phongHoc = searchPhongHocLyThuyet(maPhong); // Tìm phòng trước
+        if (phongHoc != null) {
+            phongHoc.setDayNha(phongHocMoi.getDayNha());
+            phongHoc.setDienTich(phongHocMoi.getDienTich());
+            phongHoc.setSoBongDen(phongHocMoi.getSoBongDen());
+            phongHoc.setNam(phongHocMoi.getNam());
+            phongHoc.setThang(phongHocMoi.getThang());
+            phongHoc.setNgay(phongHocMoi.getNgay());
+            phongHoc.setMayChieu(phongHocMoi.isMayChieu());
+        }
+    }
+    
+    static void setPhongHocMayTinh(String maPhong, PhongHocMayTinh phongHocMoi) {
+        PhongHocMayTinh phongHoc = searchPhongHocMayTinh(maPhong);
+        if (phongHoc != null) {
+            phongHoc.setDayNha(phongHocMoi.getDayNha());
+            phongHoc.setDienTich(phongHocMoi.getDienTich());
+            phongHoc.setSoBongDen(phongHocMoi.getSoBongDen());
+            phongHoc.setNam(phongHocMoi.getNam());
+            phongHoc.setThang(phongHocMoi.getThang());
+            phongHoc.setNgay(phongHocMoi.getNgay());
+            phongHoc.setSoLuongMayTinh(phongHocMoi.getSoLuongMayTinh());
+        }
+    }
+
+    static void setPhongHocThiNghiem(String maPhong, PhongHocThiNghiem phongHocMoi) {
+        PhongHocThiNghiem phongHoc = searchPhongHocThiNghiem(maPhong);
+        if (phongHoc != null) {
+            phongHoc.setDayNha(phongHocMoi.getDayNha());
+            phongHoc.setDienTich(phongHocMoi.getDienTich());
+            phongHoc.setSoBongDen(phongHocMoi.getSoBongDen());
+            phongHoc.setNam(phongHocMoi.getNam());
+            phongHoc.setThang(phongHocMoi.getThang());
+            phongHoc.setNgay(phongHocMoi.getNgay());
+            phongHoc.setChuyenNganh(phongHocMoi.getChuyenNganh());
+            phongHoc.setSucChua(phongHocMoi.getSucChua());
+            phongHoc.setBonRua(phongHocMoi.isBonRua());
+        }
+    }
 	
 	//DELETE
 	static void removePhongHocLyThuyet(String maPhong) {
