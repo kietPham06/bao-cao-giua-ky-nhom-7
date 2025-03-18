@@ -1,11 +1,11 @@
 
 public class PhongHocThiNghiem extends PhongHoc {
-	// ô 2
+	// Ô 2
 	String chuyenNganh;
 	int sucChua;
 	boolean bonRua;
 	
-	// ô 3
+	// Ô 3
 	// Constructor mặc định
 	PhongHocThiNghiem() {
 		// Không cần code vì các giá trị mặc định là 0 hoặc null
@@ -45,9 +45,9 @@ public class PhongHocThiNghiem extends PhongHoc {
 		this.bonRua = bonRua;
 	}
 	
-	@Override // kiểm tra ghi đè 
-	boolean datChuan() { //// cài đặt lại thân method (body of method)
-		int soBongDenCanThiet = (int) Math.ceil(dienTich / 10); // làm tròn và ép về kiểu int
+	@Override // Kiểm tra ghi đè 
+	boolean datChuan() { //// Cài đặt lại thân method (body of method)
+		int soBongDenCanThiet = (int) Math.ceil(dienTich / 10); // Làm tròn và ép về kiểu int
         return soBongDen >= soBongDenCanThiet && bonRua;
 	}
 	

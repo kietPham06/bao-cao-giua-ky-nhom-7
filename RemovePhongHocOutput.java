@@ -1,22 +1,21 @@
 import java.io.PrintWriter;
-import java.util.Calendar;
 
-public class PhongHocOutput {
+public class RemovePhongHocOutput {
 	
-	// Ô 2
+	//Ô 2
 	PrintWriter out;
 	
 	// Ô 3
-	PhongHocOutput() {
+	RemovePhongHocOutput() {
 		out = new PrintWriter(System.out);
 	}
 	
-	PhongHocOutput(PrintWriter out) {
+	RemovePhongHocOutput(PrintWriter out) {
 		this.out = out;
 	}
 	
 	void output(PhongHocLyThuyet phongHoc) {
-		out.println("Đã lưu phòng học lý thuyết thành công!!!");
+		out.println("Đã xóa phòng học lý thuyết thành công!!!");
 		out.flush();
 		out.println("Mã phòng: " + phongHoc.maPhong);
 		out.flush();
@@ -24,14 +23,14 @@ public class PhongHocOutput {
 	}
 	
 	void output(PhongHocMayTinh phongHoc) {
-		out.println("Đã lưu phòng học máy tính thành công!!!");
+		out.println("Đã xóa phòng học máy tính thành công!!!");
 		out.flush();
 		out.println("Mã phòng: " + phongHoc.maPhong);
 		out.flush();
 	}
 	
 	void output(PhongHocThiNghiem phongHoc) {
-		out.println("Đã lưu phòng học thí nghiệm thành công!!!");
+		out.println("Đã xóa phòng học thí nghiệm thành công!!!");
 		out.flush();
 		out.println("Mã phòng: " + phongHoc.maPhong);
 		out.flush();

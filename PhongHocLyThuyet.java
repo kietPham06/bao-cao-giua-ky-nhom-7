@@ -1,9 +1,9 @@
 
 public class PhongHocLyThuyet extends PhongHoc {
-	// ô 2
+	// Ô 2
 	boolean mayChieu;
 	
-	// ô 3
+	// Ô 3
 	// Constructor mặc định
 	PhongHocLyThuyet() {
 		 // Không cần code vì các giá trị mặc định là 0 hoặc null
@@ -25,9 +25,9 @@ public class PhongHocLyThuyet extends PhongHoc {
 		this.mayChieu = mayChieu;
 	}
 	
-	@Override // kiểm tra ghi đè 
-	boolean datChuan() { // cài đặt lại thân method (body of method)
-		int soBongDenCanThiet = (int) Math.ceil(dienTich / 10); // làm tròn và ép về kiểu int
+	@Override // Kiểm tra ghi đè 
+	boolean datChuan() { // Cài đặt lại thân method (body of method)
+		int soBongDenCanThiet = (int) Math.ceil(dienTich / 10); // Làm tròn và ép về kiểu int
         return soBongDen >= soBongDenCanThiet && mayChieu;
 	}
 

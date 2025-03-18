@@ -1,7 +1,7 @@
 
 public class PhongHoc {
-    // ô 2
-    String maPhong; // thuộc tính
+    // Ô 2
+    String maPhong; // Thuộc tính
     String dayNha;
     double dienTich;
     int soBongDen;
@@ -9,14 +9,14 @@ public class PhongHoc {
     int thang;
     int ngay;
     
-    // ô 3
+    // Ô 3
     // Constructor mặc định
    PhongHoc() {
         // Không cần code vì các giá trị mặc định là 0 hoặc null
     }
     // Constructor có tham số
-    // dùng để truyền giá trị từ bên ngoài vào thuộc tính tạo nên trạng thái của đối tượng
-   	// trạng thái là tập hợp các giá trị thuộc tính tại thời điểm nhất định
+    // Dùng để truyền giá trị từ bên ngoài vào thuộc tính tạo nên trạng thái của đối tượng
+   	// Trạng thái là tập hợp các giá trị thuộc tính tại thời điểm nhất định
     PhongHoc(String maPhong, String dayNha, double dienTich, int soBongDen, int nam, int thang, int ngay) {
     	// Gán tham số có giá trị cho thuộc tính
         this.maPhong = maPhong; // this dùng để phần biệt giữa thuộc tính và tham số
@@ -88,7 +88,7 @@ public class PhongHoc {
     }
     
     boolean datChuan() {
-    	int soBongDenCanThiet = (int) Math.ceil(dienTich / 10); // làm tròn lên và ép về kiểu int
+    	int soBongDenCanThiet = (int) Math.ceil(dienTich / 10); // Làm tròn lên và ép về kiểu int
         return soBongDen >= soBongDenCanThiet;
     }
     
