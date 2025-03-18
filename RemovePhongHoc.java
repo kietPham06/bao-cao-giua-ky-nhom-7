@@ -33,6 +33,7 @@ public class RemovePhongHoc {
 	}
 	
 	void removePhongHoc() {
+		
         out.print("Nhập mã phòng cần xóa: ");
         out.flush();
         
