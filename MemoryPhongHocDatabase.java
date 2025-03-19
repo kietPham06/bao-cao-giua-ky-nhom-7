@@ -97,31 +97,28 @@ public class MemoryPhongHocDatabase {
     }
 	
 	//DELETE
-	static void removePhongHocLyThuyet(String maPhong) {
-		// duyệt từ cuối lên đầu
-		for (int i = dataBasePhongHocLyThuyet.size() - 1; i >= 0; i--) {
-	        if (dataBasePhongHocLyThuyet.get(i).getMaPhong().equals(maPhong)) {
-	            dataBasePhongHocLyThuyet.remove(i);
-	            break; // Thoát vòng lặp sau khi tìm thấy phòng cần xóa
-	        }
-	    }
-	}
-	static void removePhongHocMayTinh(String maPhong) {
-		// duyệt từ cuối lên đầu
-		for (int i = dataBasePhongHocMayTinh.size() - 1; i >= 0; i--) {
-	        if (dataBasePhongHocMayTinh.get(i).getMaPhong().equals(maPhong)) {
-	            dataBasePhongHocMayTinh.remove(i);
-	            break; // Thoát vòng lặp sau khi tìm thấy phòng cần xóa
-	        }
-	    }		
-	}
-	static void removePhongHocThiNghiem(String maPhong) {
-		// duyệt từ cuối lên đầu
-		for (int i = dataBasePhongHocThiNghiem.size() - 1; i >= 0; i--) {
-	        if (dataBasePhongHocThiNghiem.get(i).getMaPhong().equals(maPhong)) {
-	            dataBasePhongHocThiNghiem.remove(i);
-	            break; // Thoát vòng lặp sau khi tìm thấy phòng cần xóa
-	        }
-	    }
-	}
+    static PhongHocLyThuyet removePhongHocLyThuyet(String maPhong) {
+        PhongHocLyThuyet phong = searchPhongHocLyThuyet(maPhong);
+        if (phong != null) {
+            dataBasePhongHocLyThuyet.remove(phong);
+        }
+		return phong;
+    }
+
+    static PhongHocMayTinh removePhongHocMayTinh(String maPhong) {
+        PhongHocMayTinh phong = searchPhongHocMayTinh(maPhong);
+        if (phong != null) {
+            dataBasePhongHocMayTinh.remove(phong);
+        }
+		return phong;
+    }
+
+    static PhongHocThiNghiem removePhongHocThiNghiem(String maPhong) {
+        PhongHocThiNghiem phong = searchPhongHocThiNghiem(maPhong);
+        if (phong != null) {
+            dataBasePhongHocThiNghiem.remove(phong);
+        }
+		return phong;
+    }
+
 }

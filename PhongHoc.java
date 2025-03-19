@@ -62,15 +62,6 @@ public class PhongHoc {
 	boolean datChuan() {
     	int soBongDenCanThiet = (int) Math.ceil(dienTich / 10); // Làm tròn lên và ép về kiểu int
         return soBongDen >= soBongDenCanThiet;
-    }
-    
-	@Override
-	public String toString() {
-		return "Mã phòng: " + maPhong + "\n" +
-		           "Dãy nhà: " + dayNha + "\n" +
-		           "Số bóng đèn: " + soBongDen;
-	}
-    
-    
+    } 
     
 }

@@ -47,6 +47,8 @@ public class PhongHocInput {
 	    PhongHocThiNghiem phongHocThiNghiem;
 
 	    // Nhập thông tin chung
+	    out.println("============================================");
+	    out.flush();
 	    out.print("Mã phòng: ");
 	    out.flush();
 	    maPhong = keyboard.nextLine();
@@ -71,6 +73,8 @@ public class PhongHocInput {
 
 	    out.println("Chọn loại phòng học:");
 	    out.println("1 - Lý thuyết | 2 - Máy tính | 3 - Thí nghiệm");
+	    out.println("============================================");
+	    out.flush();
 	    out.print("Chọn: ");
 	    out.flush();
 	    loaiPhongHoc = keyboard.nextInt();

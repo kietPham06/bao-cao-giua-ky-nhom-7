@@ -31,14 +31,4 @@ public class PhongHocLyThuyet extends PhongHoc {
         return soBongDen >= soBongDenCanThiet && mayChieu;
 	}
 
-	@Override
-	public String toString() {
-		return "Mã phòng: " + maPhong + "\n" +
-		           "Dãy nhà: " + dayNha + "\n" +
-		           "Số bóng đèn: " + soBongDen + "\n" +
-		           "Máy chiếu: " + mayChieu + "\n";
-	}
-	
-	
-	
 }

@@ -8,16 +8,16 @@ public class RemovePhongHocStorage {
 		
 	}
 	
-	void deletePhongHocLyThuyet(String maPhong) {
-		MemoryPhongHocDatabase.removePhongHocLyThuyet(maPhong);
+	PhongHocLyThuyet deletePhongHocLyThuyet(String maPhong) {
+		 return MemoryPhongHocDatabase.removePhongHocLyThuyet(maPhong);
 	}
 	
-	void deletePhongHocMayTinh(String maPhong) {
-		MemoryPhongHocDatabase.removePhongHocMayTinh(maPhong);
+	PhongHocMayTinh deletePhongHocMayTinh(String maPhong) {
+		return MemoryPhongHocDatabase.removePhongHocMayTinh(maPhong);
 	}
 	
-	void deletePhongHocThiNghiem(String maPhong) {
-		MemoryPhongHocDatabase.removePhongHocThiNghiem(maPhong);
+	PhongHocThiNghiem deletePhongHocThiNghiem(String maPhong) {
+		return MemoryPhongHocDatabase.removePhongHocThiNghiem(maPhong);
 	}
 	
 }
