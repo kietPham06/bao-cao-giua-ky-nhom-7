@@ -9,8 +9,8 @@ public class PhongHocMayTinh extends PhongHoc {
 		// Không cần code vì các giá trị mặc định là 0 hoặc null
 	}
 	
-	PhongHocMayTinh(String maPhong, String dayNha, double dienTich, int soBongDen, int nam, int thang, int ngay, int soLuongMayTinh) {
-		super(maPhong, dayNha, dienTich, soBongDen, nam, thang, ngay); //super dùng để gọi constructor tham số của lớp cha đẻ gán lại các tham số cho thuộc tính
+	PhongHocMayTinh(String maPhong, String dayNha, double dienTich, int soBongDen, String ngayHoatDong, int soLuongMayTinh) {
+		super(maPhong, dayNha, dienTich, soBongDen, ngayHoatDong); //super dùng để gọi constructor tham số của lớp cha đẻ gán lại các tham số cho thuộc tính
 		this.soLuongMayTinh = soLuongMayTinh; // this dùng để phần biệt giữa thuộc tính và tham số
 	}
 

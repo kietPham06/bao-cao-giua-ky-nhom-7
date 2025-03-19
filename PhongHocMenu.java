@@ -12,7 +12,9 @@ public class PhongHocMenu {
 	// Chức năng
 	PhongHocInput phongHocInput;
 	RemovePhongHoc removePhongHoc;
+	SearchPhongHoc searchPhongHoc;
 	DanhSachPhongHocControl danhSachPhongHocControl;
+	PKDCControl pKDCControl;
 	
 	
 	//Ô 3
@@ -24,6 +26,7 @@ public class PhongHocMenu {
 		// Chức năng
 		phongHocInput = new PhongHocInput();
 		removePhongHoc = new RemovePhongHoc();
+		searchPhongHoc = new SearchPhongHoc();
 		danhSachPhongHocControl = new DanhSachPhongHocControl();
 		
 	}
@@ -47,6 +50,16 @@ public class PhongHocMenu {
 	 PhongHocMenu(PrintWriter out, Scanner keyboard, String prompt, PhongHocInput phongHocInput, RemovePhongHoc removePhongHoc, DanhSachPhongHocControl danhSachPhongHocControl) {
 			this(out, keyboard, prompt, phongHocInput, removePhongHoc);
 			this.danhSachPhongHocControl = danhSachPhongHocControl;
+		}
+	 
+	 PhongHocMenu(PrintWriter out, Scanner keyboard, String prompt, PhongHocInput phongHocInput, RemovePhongHoc removePhongHoc, DanhSachPhongHocControl danhSachPhongHocControl, SearchPhongHoc searchPhongHoc) {
+			this(out, keyboard, prompt, phongHocInput, removePhongHoc, danhSachPhongHocControl);
+			this.searchPhongHoc = searchPhongHoc;
+		}
+	 
+	 PhongHocMenu(PrintWriter out, Scanner keyboard, String prompt, PhongHocInput phongHocInput, RemovePhongHoc removePhongHoc, DanhSachPhongHocControl danhSachPhongHocControl, SearchPhongHoc searchPhongHoc, PKDCControl pKDCControl) {
+			this(out, keyboard, prompt, phongHocInput, removePhongHoc, danhSachPhongHocControl, searchPhongHoc);
+			this.pKDCControl = pKDCControl;
 		}
 
 	
@@ -110,7 +123,7 @@ public class PhongHocMenu {
 			}
 			
 			if("find".equalsIgnoreCase(command)) {
-				
+				search();
 				continue;
 			}
 			
@@ -120,7 +133,7 @@ public class PhongHocMenu {
 			}
 			
 			if("export".equalsIgnoreCase(command)) {
-				
+				export();
 				continue;
 			}
 			
@@ -180,7 +193,7 @@ public class PhongHocMenu {
 		phongHocInput.input();
 	}
 
-	void edit() {
+	void set() {
 		
 	}
 	
@@ -188,8 +201,8 @@ public class PhongHocMenu {
 		removePhongHoc.removePhongHoc();
 	}
 	
-	void find() {
-		
+	void search() {
+		searchPhongHoc.searchPhongHoc();
 	}
 	
 	void print() {
@@ -197,7 +210,7 @@ public class PhongHocMenu {
 	}
 	
 	void export() {
-		
+		pKDCControl.printPKDC();
 	}
 	
 	void count() {

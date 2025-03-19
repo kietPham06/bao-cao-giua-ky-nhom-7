@@ -1,4 +1,5 @@
 import java.io.PrintWriter;
+import java.time.LocalDate;
 import java.util.Scanner;
 
 public class PhongHocInput {
@@ -33,7 +34,8 @@ public class PhongHocInput {
 	void input() {
 	    String maPhong, dayNha;
 	    double dienTich;
-	    int soBongDen, ngay, thang, nam, loaiPhongHoc;
+	    int soBongDen, loaiPhongHoc;
+	    String ngayHoatDong;
 	    boolean mayChieu;
 	    int soLuongMayTinh;
 	    String chuyenNganh;
@@ -63,20 +65,9 @@ public class PhongHocInput {
 	    soBongDen = keyboard.nextInt();
 	    keyboard.nextLine(); // Xử lý xuống dòng
 
-	    out.print("Ngày: ");
+	    out.print("Ngày hoạt động (yyyy-MM-dd): ");
 	    out.flush();
-	    ngay = keyboard.nextInt();
-	    keyboard.nextLine(); // Xử lý xuống dòng
-
-	    out.print("Tháng: ");
-	    out.flush();
-	    thang = keyboard.nextInt();
-	    keyboard.nextLine(); // Xử lý xuống dòng
-
-	    out.print("Năm: ");
-	    out.flush();
-	    nam = keyboard.nextInt();
-	    keyboard.nextLine(); // Xử lý xuống dòng
+	    ngayHoatDong = keyboard.nextLine();
 
 	    out.println("Chọn loại phòng học:");
 	    out.println("1 - Lý thuyết | 2 - Máy tính | 3 - Thí nghiệm");
@@ -92,7 +83,7 @@ public class PhongHocInput {
 	            mayChieu = keyboard.nextBoolean();
 	            keyboard.nextLine(); // Xử lý xuống dòng
 
-	            phongHocLyThuyet = new PhongHocLyThuyet(maPhong, dayNha, dienTich, soBongDen, nam, thang, ngay, mayChieu);
+	            phongHocLyThuyet = new PhongHocLyThuyet(maPhong, dayNha, dienTich, soBongDen, ngayHoatDong, mayChieu);
 	            storage.insertPhongHocLyThuyet(phongHocLyThuyet);
 	            phongHocOutput.output(phongHocLyThuyet);
 	            break;
@@ -103,7 +94,7 @@ public class PhongHocInput {
 	            soLuongMayTinh = keyboard.nextInt();
 	            keyboard.nextLine(); // Xử lý xuống dòng
 
-	            phongHocMayTinh = new PhongHocMayTinh(maPhong, dayNha, dienTich, soBongDen, nam, thang, ngay, soLuongMayTinh);
+	            phongHocMayTinh = new PhongHocMayTinh(maPhong, dayNha, dienTich, soBongDen, ngayHoatDong, soLuongMayTinh);
 	            storage.insertPhongHocLyMayTinh(phongHocMayTinh);
 	            phongHocOutput.output(phongHocMayTinh);
 	            break;
@@ -123,7 +114,7 @@ public class PhongHocInput {
 	            bonRua = keyboard.nextBoolean();
 	            keyboard.nextLine(); // Xử lý xuống dòng
 
-	            phongHocThiNghiem = new PhongHocThiNghiem(maPhong, dayNha, dienTich, soBongDen, nam, thang, ngay, chuyenNganh, sucChua, bonRua);
+	            phongHocThiNghiem = new PhongHocThiNghiem(maPhong, dayNha, dienTich, soBongDen, ngayHoatDong, chuyenNganh, sucChua, bonRua);
 	            storage.insertPhongHocLyThiNghiem(phongHocThiNghiem);
 	            phongHocOutput.output(phongHocThiNghiem);
 	            break;

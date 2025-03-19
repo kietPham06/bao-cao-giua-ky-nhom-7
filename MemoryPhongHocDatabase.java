@@ -7,7 +7,7 @@ public class MemoryPhongHocDatabase {
 	static ArrayList<PhongHocLyThuyet> dataBasePhongHocLyThuyet = new ArrayList<PhongHocLyThuyet>();
 	static ArrayList<PhongHocMayTinh> dataBasePhongHocMayTinh = new ArrayList<PhongHocMayTinh>();
 	static ArrayList<PhongHocThiNghiem> dataBasePhongHocThiNghiem = new ArrayList<PhongHocThiNghiem>();
-	static ArrayList<PhongHoc> dataBasePKDC = new ArrayList<>();
+	static ArrayList<PhongHoc> dataBasePhongHoc = new ArrayList<>();
 	
 	// Ô 3
 	//INSERT
@@ -67,9 +67,7 @@ public class MemoryPhongHocDatabase {
             phongHoc.setDayNha(phongHocMoi.getDayNha());
             phongHoc.setDienTich(phongHocMoi.getDienTich());
             phongHoc.setSoBongDen(phongHocMoi.getSoBongDen());
-            phongHoc.setNam(phongHocMoi.getNam());
-            phongHoc.setThang(phongHocMoi.getThang());
-            phongHoc.setNgay(phongHocMoi.getNgay());
+            phongHoc.setNgayHoatDong(phongHocMoi.getNgayHoatDong());
             phongHoc.setMayChieu(phongHocMoi.isMayChieu());
         }
     }
@@ -80,9 +78,7 @@ public class MemoryPhongHocDatabase {
             phongHoc.setDayNha(phongHocMoi.getDayNha());
             phongHoc.setDienTich(phongHocMoi.getDienTich());
             phongHoc.setSoBongDen(phongHocMoi.getSoBongDen());
-            phongHoc.setNam(phongHocMoi.getNam());
-            phongHoc.setThang(phongHocMoi.getThang());
-            phongHoc.setNgay(phongHocMoi.getNgay());
+            phongHoc.setNgayHoatDong(phongHocMoi.getNgayHoatDong());
             phongHoc.setSoLuongMayTinh(phongHocMoi.getSoLuongMayTinh());
         }
     }
@@ -93,9 +89,7 @@ public class MemoryPhongHocDatabase {
             phongHoc.setDayNha(phongHocMoi.getDayNha());
             phongHoc.setDienTich(phongHocMoi.getDienTich());
             phongHoc.setSoBongDen(phongHocMoi.getSoBongDen());
-            phongHoc.setNam(phongHocMoi.getNam());
-            phongHoc.setThang(phongHocMoi.getThang());
-            phongHoc.setNgay(phongHocMoi.getNgay());
+            phongHoc.setNgayHoatDong(phongHocMoi.getNgayHoatDong());
             phongHoc.setChuyenNganh(phongHocMoi.getChuyenNganh());
             phongHoc.setSucChua(phongHocMoi.getSucChua());
             phongHoc.setBonRua(phongHocMoi.isBonRua());

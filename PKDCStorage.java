@@ -9,7 +9,7 @@ public class PKDCStorage {
 
     ArrayList<PhongHoc> getPKDC() {
         ArrayList<PhongHoc> dsPKDC;
-        dsPKDC = MemoryPhongHocDatabase.dataBasePKDC;
+        dsPKDC = MemoryPhongHocDatabase.dataBasePhongHoc;
         return dsPKDC;
     }
 }

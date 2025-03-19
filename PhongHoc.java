@@ -5,9 +5,7 @@ public class PhongHoc {
     String dayNha;
     double dienTich;
     int soBongDen;
-    int nam;
-    int thang;
-    int ngay;
+    String ngayHoatDong; // Kiểu ngày java
     
     // Ô 3
     // Constructor mặc định
@@ -17,15 +15,13 @@ public class PhongHoc {
     // Constructor có tham số
     // Dùng để truyền giá trị từ bên ngoài vào thuộc tính tạo nên trạng thái của đối tượng
    	// Trạng thái là tập hợp các giá trị thuộc tính tại thời điểm nhất định
-    PhongHoc(String maPhong, String dayNha, double dienTich, int soBongDen, int nam, int thang, int ngay) {
+    PhongHoc(String maPhong, String dayNha, double dienTich, int soBongDen, String ngayHoatDong) {
     	// Gán tham số có giá trị cho thuộc tính
         this.maPhong = maPhong; // this dùng để phần biệt giữa thuộc tính và tham số
         this.dayNha = dayNha;
         this.dienTich = dienTich;
         this.soBongDen = soBongDen;
-        this.nam = nam;
-        this.thang = thang;
-        this.ngay = ngay;
+        this.ngayHoatDong = ngayHoatDong;
     }
 
     // Getter & Setter
@@ -34,60 +30,36 @@ public class PhongHoc {
     String getMaPhong() {
         return maPhong;
     }
-
-    void setMaPhong(String maPhong) {
-        this.maPhong = maPhong;
-    }
-
-    String getDayNha() {
-        return dayNha;
-    }
-
-    void setDayNha(String dayNha) {
-        this.dayNha = dayNha;
-    }
-
-    double getDienTich() {
-        return dienTich;
-    }
-
-    void setDienTich(double dienTich) {
-        this.dienTich = dienTich;
-    }
-
-    int getSoBongDen() {
-        return soBongDen;
-    }
-
-    void setSoBongDen(int soBongDen) {
-        this.soBongDen = soBongDen;
-    }
-
-    int getNam() {
-        return nam;
-    }
-
-    void setNam(int nam) {
-        this.nam = nam;
-    }
-
-    int getThang() {
-        return thang;
-    }
-
-    void setThang(int thang) {
-        this.thang = thang;
-    }
-
-    int getNgay() {
-        return ngay;
-    }
-
-    void setNgay(int ngay) {
-        this.ngay = ngay;
-    }
-    
-    boolean datChuan() {
+  
+	String getDayNha() {
+		return dayNha;
+	}
+	void setDayNha(String dayNha) {
+		this.dayNha = dayNha;
+	}
+	double getDienTich() {
+		return dienTich;
+	}
+	void setDienTich(double dienTich) {
+		this.dienTich = dienTich;
+	}
+	int getSoBongDen() {
+		return soBongDen;
+	}
+	void setSoBongDen(int soBongDen) {
+		this.soBongDen = soBongDen;
+	}
+	String getNgayHoatDong() {
+		return ngayHoatDong;
+	}
+	void setNgayHoatDong(String ngayHoatDong) {
+		this.ngayHoatDong = ngayHoatDong;
+	}
+	void setMaPhong(String maPhong) {
+		this.maPhong = maPhong;
+	}
+	
+	boolean datChuan() {
     	int soBongDenCanThiet = (int) Math.ceil(dienTich / 10); // Làm tròn lên và ép về kiểu int
         return soBongDen >= soBongDenCanThiet;
     }

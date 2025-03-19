@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 
 public class PhongHocThiNghiem extends PhongHoc {
 	// Ô 2
@@ -11,8 +12,8 @@ public class PhongHocThiNghiem extends PhongHoc {
 		// Không cần code vì các giá trị mặc định là 0 hoặc null
 	}
 	
-	PhongHocThiNghiem(String maPhong, String dayNha, double dienTich, int soBongDen, int nam, int thang, int ngay, String chuyenNganh, int sucChua, boolean bonRua) {
-		super(maPhong, dayNha, dienTich, soBongDen, nam, thang, ngay); //super dùng để gọi constructor tham số của lớp cha đẻ gán lại các tham số cho thuộc tính
+	PhongHocThiNghiem(String maPhong, String dayNha, double dienTich, int soBongDen, String ngayHoatDong, String chuyenNganh, int sucChua, boolean bonRua) {
+		super(maPhong, dayNha, dienTich, soBongDen, ngayHoatDong); //super dùng để gọi constructor tham số của lớp cha đẻ gán lại các tham số cho thuộc tính
 		this.chuyenNganh = chuyenNganh; // this dùng để phần biệt giữa thuộc tính và tham số
 		this.sucChua = sucChua;
 		this.bonRua = bonRua;

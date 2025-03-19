@@ -1,34 +1,29 @@
 import java.io.PrintWriter;
 import java.time.LocalDate;
 
-public class PhongHocOutput {
+public class SearchPhongHocOutput {
 	
 	// Ô 2
 	PrintWriter out;
 	
 	// Ô 3
-	PhongHocOutput() {
+	SearchPhongHocOutput() {
 		out = new PrintWriter(System.out);
-	}
-	
-	PhongHocOutput(PrintWriter out) {
-		this.out = out;
 	}
 	
 	void output(PhongHocLyThuyet phongHoc) {
 		LocalDate date = LocalDate.parse(phongHoc.getNgayHoatDong());
-		out.println("Đã lưu phòng học lý thuyết thành công!!!");
+		out.println("Đã tìm thấy mã phòng!");
 		out.flush();
 		out.println("Mã phòng: " + phongHoc.maPhong);
 		out.flush();
 		out.println("Ngày hoạt động: " + date);
 		out.flush();
-		
 	}
 	
 	void output(PhongHocMayTinh phongHoc) {
 		LocalDate date = LocalDate.parse(phongHoc.getNgayHoatDong());
-		out.println("Đã lưu phòng học máy tính thành công!!!");
+		out.println("Đã tìm thấy mã phòng!");
 		out.flush();
 		out.println("Mã phòng: " + phongHoc.maPhong);
 		out.flush();
@@ -38,11 +33,12 @@ public class PhongHocOutput {
 	
 	void output(PhongHocThiNghiem phongHoc) {
 		LocalDate date = LocalDate.parse(phongHoc.getNgayHoatDong());
-		out.println("Đã lưu phòng học thí nghiệm thành công!!!");
+		out.println("Đã tìm thấy mã phòng!");
 		out.flush();
 		out.println("Mã phòng: " + phongHoc.maPhong);
 		out.flush();
 		out.println("Ngày hoạt động: " + date);
 		out.flush();
 	}
+	
 }

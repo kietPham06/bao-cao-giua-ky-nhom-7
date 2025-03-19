@@ -54,15 +54,15 @@ public class RemovePhongHoc {
         switch (loaiPhongHoc) {
             case 1:
                 storage.deletePhongHocLyThuyet(maPhong);
-                output.output(new PhongHocLyThuyet(maPhong, "", 0, 0, 0, 0, 0, false));
+                output.output(new PhongHocLyThuyet(maPhong, "", 0, 0, "", false));
                 break;
             case 2:
                 storage.deletePhongHocMayTinh(maPhong);
-                output.output(new PhongHocMayTinh(maPhong, "", 0, 0, 0, 0, 0, 0));
+                output.output(new PhongHocMayTinh(maPhong, "", 0, 0, "", 0));
                 break;
             case 3:
                 storage.deletePhongHocThiNghiem(maPhong);
-                output.output(new PhongHocThiNghiem(maPhong, "", 0, 0, 0, 0, 0, "", 0, false));
+                output.output(new PhongHocThiNghiem(maPhong, "", 0, 0, "", "", 0, false));
                 break;
             default:
                 out.println("Lựa chọn không hợp lệ!");
