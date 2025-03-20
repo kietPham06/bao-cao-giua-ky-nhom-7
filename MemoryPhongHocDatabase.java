@@ -23,24 +23,25 @@ public class MemoryPhongHocDatabase {
 	
 	//SELECT
 	static PhongHocLyThuyet searchPhongHocLyThuyet(String maPhong) {
-	    for (int i = 0; i < dataBasePhongHocLyThuyet.size(); i++) {
+	    for (int i = dataBasePhongHocLyThuyet.size() - 1; i >= 0; i--) { // Bắt đầu từ phần tử cuối cùng
 	        if (dataBasePhongHocLyThuyet.get(i).getMaPhong().equals(maPhong)) {
 	            return dataBasePhongHocLyThuyet.get(i); // Trả về phòng học tìm thấy
 	        }
 	    }
 	    return null; // Trả về null nếu không tìm thấy
 	}
-	
+
 	static PhongHocMayTinh searchPhongHocMayTinh(String maPhong) {
-	    for (int i = 0; i < dataBasePhongHocMayTinh.size(); i++) {
+	    for (int i = dataBasePhongHocMayTinh.size() - 1; i >= 0; i--) { // Bắt đầu từ phần tử cuối cùng
 	        if (dataBasePhongHocMayTinh.get(i).getMaPhong().equals(maPhong)) {
 	            return dataBasePhongHocMayTinh.get(i); // Trả về phòng học tìm thấy
 	        }
 	    }
 	    return null; // Trả về null nếu không tìm thấy
 	}
+
 	static PhongHocThiNghiem searchPhongHocThiNghiem(String maPhong) {
-	    for (int i = 0; i < dataBasePhongHocThiNghiem.size(); i++) {
+	    for (int i = dataBasePhongHocThiNghiem.size() - 1; i >= 0; i--) { // Bắt đầu từ phần tử cuối cùng
 	        if (dataBasePhongHocThiNghiem.get(i).getMaPhong().equals(maPhong)) {
 	            return dataBasePhongHocThiNghiem.get(i); // Trả về phòng học tìm thấy
 	        }
