@@ -15,6 +15,7 @@ public class PhongHocMenu {
 	SearchPhongHoc searchPhongHoc;
 	DanhSachPhongHocControl danhSachPhongHocControl;
 	PKDCControl pKDCControl;
+	DTTBPhongHocLyThuyet dTTBPhongHocLyThuyet;
 	
 	
 	//Ô 3
@@ -28,6 +29,7 @@ public class PhongHocMenu {
 		removePhongHoc = new RemovePhongHoc();
 		searchPhongHoc = new SearchPhongHoc();
 		danhSachPhongHocControl = new DanhSachPhongHocControl();
+		dTTBPhongHocLyThuyet = new DTTBPhongHocLyThuyet();
 		
 	}
 	
@@ -60,6 +62,11 @@ public class PhongHocMenu {
 	 PhongHocMenu(PrintWriter out, Scanner keyboard, String prompt, PhongHocInput phongHocInput, RemovePhongHoc removePhongHoc, DanhSachPhongHocControl danhSachPhongHocControl, SearchPhongHoc searchPhongHoc, PKDCControl pKDCControl) {
 			this(out, keyboard, prompt, phongHocInput, removePhongHoc, danhSachPhongHocControl, searchPhongHoc);
 			this.pKDCControl = pKDCControl;
+		}
+	 
+	 PhongHocMenu(PrintWriter out, Scanner keyboard, String prompt, PhongHocInput phongHocInput, RemovePhongHoc removePhongHoc, DanhSachPhongHocControl danhSachPhongHocControl, SearchPhongHoc searchPhongHoc, PKDCControl pKDCControl, DTTBPhongHocLyThuyet dTTBPhongHocLyThuyet) {
+			this(out, keyboard, prompt, phongHocInput, removePhongHoc, danhSachPhongHocControl, searchPhongHoc, pKDCControl);
+			this.dTTBPhongHocLyThuyet = dTTBPhongHocLyThuyet;
 		}
 
 	
@@ -143,7 +150,7 @@ public class PhongHocMenu {
 			}			
 			
 			if("avg".equalsIgnoreCase(command)) {
-				
+				average();
 				continue;
 			}
 			
@@ -218,7 +225,7 @@ public class PhongHocMenu {
 	}
 	
 	void average() {
-		
+		dTTBPhongHocLyThuyet.tinhDTTBPhongHocLyThuyet();
 	}
 
 }

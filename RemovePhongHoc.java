@@ -8,6 +8,7 @@ public class RemovePhongHoc {
 	PrintWriter out;
 	RemovePhongHocStorage storage;
 	RemovePhongHocOutput output;
+	SearchPhongHocStorage kiemTraPhongHoc;
 	
 	// Ô 3
 	RemovePhongHoc() {
@@ -15,6 +16,7 @@ public class RemovePhongHoc {
 		out = new PrintWriter(System.out);
 		storage = new RemovePhongHocStorage();
 		output = new RemovePhongHocOutput();
+		kiemTraPhongHoc = new SearchPhongHocStorage();
 	}
 	
 	RemovePhongHoc(Scanner keyboard, PrintWriter out) {
@@ -30,6 +32,11 @@ public class RemovePhongHoc {
 	RemovePhongHoc(Scanner keyboard, PrintWriter out, RemovePhongHocStorage storage, RemovePhongHocOutput output) {
 		this(keyboard, out, storage);
 		this.output = output;
+	}
+	
+	RemovePhongHoc(Scanner keyboard, PrintWriter out, RemovePhongHocStorage storage, RemovePhongHocOutput output, SearchPhongHocStorage kiemTraPhongHoc) {
+		this(keyboard, out, storage, output);
+		this.kiemTraPhongHoc = kiemTraPhongHoc;
 	}
 	
 	void removePhongHoc() {
@@ -53,16 +60,28 @@ public class RemovePhongHoc {
 
         switch (loaiPhongHoc) {
         case 1:
-            storage.deletePhongHocLyThuyet(maPhong);
-            output.output(new PhongHocLyThuyet(maPhong, "", 0.0, 0, "", false));
+        	if ((kiemTraPhongHoc.selectPhongHocLyThuyet(maPhong) == null)) {
+	            out.println("Không tìm thấy phòng học lý thuyết");
+        	} else {
+        		storage.deletePhongHocLyThuyet(maPhong);
+	            output.output(new PhongHocLyThuyet(maPhong, "", 0.0, 0, "", false));
+        	}
             break;
         case 2:
-            storage.deletePhongHocMayTinh(maPhong);
-            output.output(new PhongHocMayTinh(maPhong, "", 0.0, 0, "", 0));
+        	if ((kiemTraPhongHoc.selectPhongHocMayTinh(maPhong) == null)) {
+	            out.println("Không tìm thấy phòng học máy tính");
+        	} else {
+        		storage.deletePhongHocMayTinh(maPhong);
+                output.output(new PhongHocMayTinh(maPhong, "", 0.0, 0, "", 0));
+        	}
             break;
         case 3:
-            storage.deletePhongHocThiNghiem(maPhong);
-            output.output(new PhongHocThiNghiem(maPhong, "", 0.0, 0, "", "", 0, false));
+        	if ((kiemTraPhongHoc.selectPhongHocThiNghiem(maPhong) == null)) {
+	            out.println("Không tìm thấy phòng học thí nghiệm");
+        	} else {
+        		storage.deletePhongHocThiNghiem(maPhong);
+                output.output(new PhongHocThiNghiem(maPhong, "", 0.0, 0, "", "", 0, false));
+        	}
             break;
         default:
             System.out.println("Loại phòng không hợp lệ.");
