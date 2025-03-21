@@ -3,18 +3,22 @@ import java.time.LocalDate;
 
 public class PhongHocOutput {
 	
-	// Ô 2
+	// Ô 2: Thuộc tính
+	// Đối tượng PrintWriter để xuất dữ liệu
 	PrintWriter out;
 	
-	// Ô 3
+	// Ô 3: Phương thức
+	// Khởi tạo đối tượng với giá trị mặc định
 	PhongHocOutput() {
 		out = new PrintWriter(System.out);
 	}
 	
+	// Khởi tạo với PrintWriter bên ngoài
 	PhongHocOutput(PrintWriter out) {
 		this.out = out;
 	}
 	
+	// Xuất thông tin phòng học lý thuyết
 	void output(PhongHocLyThuyet phongHoc) {
 		LocalDate date = LocalDate.parse(phongHoc.getNgayHoatDong());
 	    out.println("============================================");
@@ -27,9 +31,9 @@ public class PhongHocOutput {
 		out.flush();
 	    out.println("============================================");
 	    out.flush();
-		
 	}
 	
+	// Xuất thông tin phòng học máy tính
 	void output(PhongHocMayTinh phongHoc) {
 		LocalDate date = LocalDate.parse(phongHoc.getNgayHoatDong());
 	    out.println("============================================");
@@ -44,6 +48,7 @@ public class PhongHocOutput {
 	    out.flush();
 	}
 	
+	// Xuất thông tin phòng học thí nghiệm
 	void output(PhongHocThiNghiem phongHoc) {
 		LocalDate date = LocalDate.parse(phongHoc.getNgayHoatDong());
 	    out.println("============================================");

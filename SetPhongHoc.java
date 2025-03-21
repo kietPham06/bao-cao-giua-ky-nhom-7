@@ -2,13 +2,15 @@ import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class SetPhongHoc {
-    Scanner keyboard;
-    PrintWriter out;
-    SetPhongHocStorage storage;
-    SetPhongHocOuput output;
-    SearchPhongHocStorage kiemTraPhongHoc;
+    // Ô 2: Thuộc tính
+    Scanner keyboard; // Đối tượng để nhập dữ liệu từ bàn phím
+    PrintWriter out; // Đối tượng để xuất dữ liệu ra màn hình
+    SetPhongHocStorage storage; // Lưu trữ thông tin phòng học
+    SetPhongHocOuput output; // Hiển thị thông tin phòng học
+    SearchPhongHocStorage kiemTraPhongHoc; // Tìm kiếm phòng học
 
-    SetPhongHoc() {
+    // Ô 3: Phương thức
+    SetPhongHoc() { // Constructor khởi tạo các đối tượng cần thiết
         keyboard = new Scanner(System.in);
         out = new PrintWriter(System.out);
         storage = new SetPhongHocStorage();
@@ -16,7 +18,7 @@ public class SetPhongHoc {
         kiemTraPhongHoc = new SearchPhongHocStorage();
     }
 
-    void setPhongHoc() {
+    void setPhongHoc() { // Phương thức chỉnh sửa thông tin phòng học
         String maPhong;
         String dayNha;
         String ngayHoatDong;
@@ -34,7 +36,7 @@ public class SetPhongHoc {
         PhongHocThiNghiem phongHocThiNghiem;
         
         out.println("============================================");
-	    out.flush();
+        out.flush();
 
         out.print("Nhập mã phòng cần sửa: ");
         out.flush();
@@ -50,15 +52,15 @@ public class SetPhongHoc {
         keyboard.nextLine(); // Xử lý dòng trống
 
         switch (loaiPhongHoc) {
-            case 1:
+            case 1: // Cập nhật phòng lý thuyết
                 phongHocLyThuyet = kiemTraPhongHoc.selectPhongHocLyThuyet(maPhong);
                 if (phongHocLyThuyet == null) {
-                	out.println("============================================");
-             	    out.flush();
+                    out.println("============================================");
+                    out.flush();
                     out.println("Không tìm thấy phòng lý thuyết có mã: " + maPhong);
                     out.flush();
                     out.println("============================================");
-            	    out.flush();
+                    out.flush();
                 } else {
                     out.println("Vui lòng nhập thông tin phòng cần cập nhật");
                     out.flush();
@@ -86,7 +88,7 @@ public class SetPhongHoc {
                     mayChieu = keyboard.nextBoolean();
                     keyboard.nextLine();
                     out.println("============================================");
-            	    out.flush();
+                    out.flush();
 
                     phongHocLyThuyet = new PhongHocLyThuyet(maPhong, dayNha, dienTich, soBongDen, ngayHoatDong, mayChieu);
                     storage.setPhongHocLyThuyet(maPhong, phongHocLyThuyet);
@@ -94,15 +96,15 @@ public class SetPhongHoc {
                 }
                 break;
 
-            case 2:
+            case 2: // Cập nhật phòng máy tính
                 phongHocMayTinh = kiemTraPhongHoc.selectPhongHocMayTinh(maPhong);
                 if (phongHocMayTinh == null) {
-                	out.println("============================================");
-             	    out.flush();
+                    out.println("============================================");
+                    out.flush();
                     out.println("Không tìm thấy phòng học máy tính có mã: " + maPhong);
                     out.flush();
-                	out.println("============================================");
-             	    out.flush();
+                    out.println("============================================");
+                    out.flush();
                 } else {
                     out.println("Vui lòng nhập thông tin phòng cần cập nhật");
                     out.flush();
@@ -130,23 +132,23 @@ public class SetPhongHoc {
                     soLuongMayTinh = keyboard.nextInt();
                     keyboard.nextLine();
                     out.println("============================================");
-            	    out.flush();
+                    out.flush();
 
                     phongHocMayTinh = new PhongHocMayTinh(maPhong, dayNha, dienTich, soBongDen, ngayHoatDong, soLuongMayTinh);
                     storage.setPhongHocMayTinh(maPhong, phongHocMayTinh);
                     output.outputPhongHocMayTinh(phongHocMayTinh);
-               }
+                }
                 break;
 
-            case 3:
+            case 3: // Cập nhật phòng thí nghiệm
                 phongHocThiNghiem = kiemTraPhongHoc.selectPhongHocThiNghiem(maPhong);
                 if (phongHocThiNghiem == null) {
-                	out.println("============================================");
-             	    out.flush();
+                    out.println("============================================");
+                    out.flush();
                     out.println("Không tìm thấy phòng học thí nghiệm có mã: " + maPhong);
                     out.flush();
-                	out.println("============================================");
-             	    out.flush();
+                    out.println("============================================");
+                    out.flush();
                 } else {
                     out.println("Vui lòng nhập thông tin phòng cần cập nhật");
                     out.flush();
@@ -183,18 +185,16 @@ public class SetPhongHoc {
                     bonRua = keyboard.nextBoolean();
                     keyboard.nextLine();
                     out.println("============================================");
-            	    out.flush();
-
+                    out.flush();
+                    
                     phongHocThiNghiem = new PhongHocThiNghiem(maPhong, dayNha, dienTich, soBongDen, ngayHoatDong, chuyenNganh, sucChua, bonRua);
                     storage.setPhongHocThiNghiem(maPhong, phongHocThiNghiem);
-                    output.outputPhongHocThiNghiem(phongHocThiNghiem);               }
+                    output.outputPhongHocThiNghiem(phongHocThiNghiem);
+                }
                 break;
-
             default:
                 out.println("Loại phòng không hợp lệ.");
                 out.flush();
-                out.println("============================================");
-        	    out.flush();
         }
     }
 }

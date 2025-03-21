@@ -1,5 +1,3 @@
-import java.time.LocalDate;
-
 public class PhongHocThiNghiem extends PhongHoc {
 	// Ô 2
 	String chuyenNganh;

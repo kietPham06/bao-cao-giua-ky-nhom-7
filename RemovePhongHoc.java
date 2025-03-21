@@ -3,14 +3,16 @@ import java.util.Scanner;
 
 public class RemovePhongHoc {
 	
-	// Ô 2
+	// Ô 2: Thuộc tính
+	// Đối tượng nhập xuất dữ liệu và xử lý lưu trữ
 	Scanner keyboard;
 	PrintWriter out;
 	RemovePhongHocStorage storage;
 	RemovePhongHocOutput output;
 	SearchPhongHocStorage kiemTraPhongHoc;
 	
-	// Ô 3
+	// Ô 3: Phương thức
+	// Constructor mặc định
 	RemovePhongHoc() {
 		keyboard = new Scanner(System.in);
 		out = new PrintWriter(System.out);
@@ -19,26 +21,31 @@ public class RemovePhongHoc {
 		kiemTraPhongHoc = new SearchPhongHocStorage();
 	}
 	
+	// Constructor với Scanner và PrintWriter
 	RemovePhongHoc(Scanner keyboard, PrintWriter out) {
 		this.keyboard = keyboard;
 		this.out = out;
 	}
 	
+	// Constructor với Scanner, PrintWriter và Storage
 	RemovePhongHoc(Scanner keyboard, PrintWriter out, RemovePhongHocStorage storage) {
 		this(keyboard, out);
 		this.storage = storage;
 	}
 	
+	// Constructor với Scanner, PrintWriter, Storage và Output
 	RemovePhongHoc(Scanner keyboard, PrintWriter out, RemovePhongHocStorage storage, RemovePhongHocOutput output) {
 		this(keyboard, out, storage);
 		this.output = output;
 	}
 	
+	// Constructor đầy đủ các thành phần
 	RemovePhongHoc(Scanner keyboard, PrintWriter out, RemovePhongHocStorage storage, RemovePhongHocOutput output, SearchPhongHocStorage kiemTraPhongHoc) {
 		this(keyboard, out, storage, output);
 		this.kiemTraPhongHoc = kiemTraPhongHoc;
 	}
 	
+	// Phương thức xóa phòng học
 	void removePhongHoc() {
 		String maPhong;
 		int loaiPhongHoc;

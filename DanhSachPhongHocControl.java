@@ -1,31 +1,37 @@
 import java.util.ArrayList;
 
 public class DanhSachPhongHocControl {
-	
-	// Ô 2
-	DanhSachPhongHocStorage storage;
-	DanhSachPhongHocOutput output;
-	
-	// Ô 3
-	DanhSachPhongHocControl() {
-		storage = new DanhSachPhongHocStorage();
-		output = new DanhSachPhongHocOutput();
-	}
-	DanhSachPhongHocControl(DanhSachPhongHocStorage storage, DanhSachPhongHocOutput output) {
-        
+    
+    // Ô 2: Thuộc tính - Quản lý dữ liệu và đầu ra danh sách phòng học
+    DanhSachPhongHocStorage storage; // Đối tượng lưu trữ danh sách phòng học
+    DanhSachPhongHocOutput output;   // Đối tượng xuất danh sách phòng học
+    
+    // Ô 3: Phương thức
+    
+    // Constructor - Khởi tạo đối tượng với đối tượng lưu trữ và xuất dữ liệu mặc định
+    DanhSachPhongHocControl() {
+        storage = new DanhSachPhongHocStorage();
+        output = new DanhSachPhongHocOutput();
     }
     
+    // Constructor - Khởi tạo với đối tượng lưu trữ và xuất dữ liệu tùy chỉnh
+    DanhSachPhongHocControl(DanhSachPhongHocStorage storage, DanhSachPhongHocOutput output) {
+        this.storage = storage;
+        this.output = output;
+    }
+    
+    // Phương thức printDanhSachPhongHoc - Lấy danh sách phòng học từ storage và xuất ra màn hình
     void printDanhSachPhongHoc() {
-    	ArrayList<PhongHocLyThuyet> danhSachPhongHocLyThuyet;
-    	ArrayList<PhongHocMayTinh> danhSachPhongHocMayTinh;
-    	ArrayList<PhongHocThiNghiem> danhSachPhongHocThiNghiem;
+        ArrayList<PhongHocLyThuyet> danhSachPhongHocLyThuyet;
+        ArrayList<PhongHocMayTinh> danhSachPhongHocMayTinh;
+        ArrayList<PhongHocThiNghiem> danhSachPhongHocThiNghiem;
         
-    	// Lấy dữ liệu
-    	danhSachPhongHocLyThuyet = storage.getDanhSachPhongHocLyThuyet();
-    	danhSachPhongHocMayTinh = storage.getDanhSachPhongHocMayTinh();
-    	danhSachPhongHocThiNghiem = storage.getDanhSachPhongHocThiNghiem();
-    	
-    	// In dữ liệu
-    	output.output(danhSachPhongHocLyThuyet, danhSachPhongHocMayTinh, danhSachPhongHocThiNghiem);
+        // Lấy dữ liệu từ storage
+        danhSachPhongHocLyThuyet = storage.getDanhSachPhongHocLyThuyet();
+        danhSachPhongHocMayTinh = storage.getDanhSachPhongHocMayTinh();
+        danhSachPhongHocThiNghiem = storage.getDanhSachPhongHocThiNghiem();
+        
+        // Xuất danh sách phòng học
+        output.output(danhSachPhongHocLyThuyet, danhSachPhongHocMayTinh, danhSachPhongHocThiNghiem);
     }
 }
