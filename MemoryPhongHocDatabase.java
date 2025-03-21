@@ -7,7 +7,6 @@ public class MemoryPhongHocDatabase {
 	static ArrayList<PhongHocLyThuyet> dataBasePhongHocLyThuyet = new ArrayList<PhongHocLyThuyet>();
 	static ArrayList<PhongHocMayTinh> dataBasePhongHocMayTinh = new ArrayList<PhongHocMayTinh>();
 	static ArrayList<PhongHocThiNghiem> dataBasePhongHocThiNghiem = new ArrayList<PhongHocThiNghiem>();
-	static ArrayList<PhongHoc> dataBasePhongHoc = new ArrayList<>();
 	
 	// Ô 3
 	//INSERT

@@ -16,6 +16,8 @@ public class PhongHocMenu {
 	DanhSachPhongHocControl danhSachPhongHocControl;
 	PKDCControl pKDCControl;
 	DTTBPhongHocLyThuyet dTTBPhongHocLyThuyet;
+	SetPhongHoc setPhongHoc;
+	CountPhongHoc countPhongHoc;
 	
 	
 	//Ô 3
@@ -30,7 +32,8 @@ public class PhongHocMenu {
 		searchPhongHoc = new SearchPhongHoc();
 		danhSachPhongHocControl = new DanhSachPhongHocControl();
 		dTTBPhongHocLyThuyet = new DTTBPhongHocLyThuyet();
-		
+		setPhongHoc = new SetPhongHoc();
+		countPhongHoc = new CountPhongHoc();
 	}
 	
 	PhongHocMenu(PrintWriter out, Scanner keyboard, String prompt) {
@@ -68,6 +71,17 @@ public class PhongHocMenu {
 			this(out, keyboard, prompt, phongHocInput, removePhongHoc, danhSachPhongHocControl, searchPhongHoc, pKDCControl);
 			this.dTTBPhongHocLyThuyet = dTTBPhongHocLyThuyet;
 		}
+	 
+	 PhongHocMenu(PrintWriter out, Scanner keyboard, String prompt, PhongHocInput phongHocInput, RemovePhongHoc removePhongHoc, DanhSachPhongHocControl danhSachPhongHocControl, SearchPhongHoc searchPhongHoc, PKDCControl pKDCControl, DTTBPhongHocLyThuyet dTTBPhongHocLyThuyet, SetPhongHoc setPhongHoc) {
+			this(out, keyboard, prompt, phongHocInput, removePhongHoc, danhSachPhongHocControl, searchPhongHoc, pKDCControl, dTTBPhongHocLyThuyet);
+			this.setPhongHoc = setPhongHoc;
+		}
+	 
+	 PhongHocMenu(PrintWriter out, Scanner keyboard, String prompt, PhongHocInput phongHocInput, RemovePhongHoc removePhongHoc, DanhSachPhongHocControl danhSachPhongHocControl, SearchPhongHoc searchPhongHoc, PKDCControl pKDCControl, DTTBPhongHocLyThuyet dTTBPhongHocLyThuyet, SetPhongHoc setPhongHoc, CountPhongHoc countPhongHoc) {
+			this(out, keyboard, prompt, phongHocInput, removePhongHoc, danhSachPhongHocControl, searchPhongHoc, pKDCControl, dTTBPhongHocLyThuyet, setPhongHoc);
+			this.countPhongHoc = countPhongHoc;
+		}
+
 
 	
 	void controlLoop() {
@@ -120,7 +134,7 @@ public class PhongHocMenu {
 			}
 			
 			if("edit".equalsIgnoreCase(command)) {
-				
+				set();
 				continue;
 			}
 			
@@ -145,7 +159,7 @@ public class PhongHocMenu {
 			}
 			
 			if("count".equalsIgnoreCase(command)) {
-				
+				count();
 				continue;
 			}			
 			
@@ -201,7 +215,7 @@ public class PhongHocMenu {
 	}
 
 	void set() {
-		
+		setPhongHoc.setPhongHoc();
 	}
 	
 	void delete() {
@@ -217,11 +231,11 @@ public class PhongHocMenu {
 	}
 	
 	void export() {
-		pKDCControl.printPKDC();
+		pKDCControl.printDanhSachPKDC();
 	}
 	
 	void count() {
-		
+		countPhongHoc.countPhongHoc();
 	}
 	
 	void average() {

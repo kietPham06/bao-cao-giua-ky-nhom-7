@@ -24,6 +24,8 @@ public class DanhSachPhongHocOutput {
 	        out.flush();
 	        out.println("Ngày hoạt động: " + date);
 	        out.flush();
+	        out.println("Loại phòng: Lý Thuyết");
+	        out.flush();
 	        if (!danhSachPhongHocLyThuyet.isEmpty()) { 	
 	        	out.println("============================================");
 	     	    out.flush();
@@ -36,6 +38,8 @@ public class DanhSachPhongHocOutput {
 	        out.flush();
 	        out.println("Ngày hoạt động: " + date);
 	        out.flush();
+	        out.println("Loại phòng: Máy tính");
+	        out.flush();
 	        if (!danhSachPhongHocMayTinh.isEmpty()) { 	
 	        	out.println("============================================");
 	     	    out.flush();
@@ -47,6 +51,8 @@ public class DanhSachPhongHocOutput {
 	        out.println("Mã phòng: " + phongHoc.getMaPhong());
 	        out.flush();
 	        out.println("Ngày hoạt động: " + date);
+	        out.flush();
+	        out.println("Loại phòng: Thí Nghiệm");
 	        out.flush();
 	        out.println("============================================");
 	        out.flush();

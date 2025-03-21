@@ -1,14 +1,14 @@
 import java.util.ArrayList;
 
-public class PKDCStorage {
-   
+public class CountPhongHocStorage {
+		
 	// Ô 2
-    
 	
-    // Ô 3
-    PKDCStorage() {
-    }
-
+	// Ô 3
+	CountPhongHocStorage() {
+		
+	}
+	
     ArrayList<PhongHocLyThuyet> getDanhSachPhongHocLyThuyet() {
     	return MemoryPhongHocDatabase.getDanhSachPhongHocLyThuyet();
     }
@@ -20,5 +20,4 @@ public class PKDCStorage {
     ArrayList<PhongHocThiNghiem> getDanhSachPhongHocThiNghiem() {
     	return MemoryPhongHocDatabase.getDanhSachPhongHocThiNghiem();
     }
-    
 }

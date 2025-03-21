@@ -16,33 +16,21 @@ public class RemovePhongHocOutput {
 	}
 	
 	void output(PhongHocLyThuyet phongHoc) {
-	    out.println("============================================");
-	    out.flush();
-		out.println("Đã tìm thấy mã phòng");
-		out.flush();
-		out.println("Mã phòng: " + phongHoc.maPhong);
+		out.println("Đã xóa phòng học lý thuyết có mã: " + phongHoc.maPhong);
 		out.flush();
 	    out.println("============================================");
 	    out.flush();
 	}
 	
 	void output(PhongHocMayTinh phongHoc) {
-	    out.println("============================================");
-	    out.flush();
-		out.println("Đã tìm thấy mã phòng!");
-		out.flush();
-		out.println("Mã phòng: " + phongHoc.maPhong);
+		out.println("Đã xóa phòng học máy tính có mã: " + phongHoc.maPhong);
 		out.flush();
 	    out.println("============================================");
 	    out.flush();
 	}
 	
-	void output(PhongHocThiNghiem phongHoc) {
-	    out.println("============================================");
-	    out.flush();
-		out.println("Đã tìm thấy mã phòng!");
-		out.flush();
-		out.println("Mã phòng: " + phongHoc.maPhong);
+	void output(PhongHocThiNghiem phongHoc) {;
+		out.println("Đã xóa phòng học thí nghiệm có mã phòng: " + phongHoc.maPhong);
 		out.flush();
 	    out.println("============================================");
 	    out.flush();

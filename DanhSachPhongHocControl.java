@@ -3,15 +3,15 @@ import java.util.ArrayList;
 public class DanhSachPhongHocControl {
 	
 	// Ô 2
-	DanhSachPhongHocStorage danhSachPhongHocStorage;
-	DanhSachPhongHocOutput danhSachPhongHocOutput;
+	DanhSachPhongHocStorage storage;
+	DanhSachPhongHocOutput output;
 	
 	// Ô 3
 	DanhSachPhongHocControl() {
-		danhSachPhongHocStorage = new DanhSachPhongHocStorage();
-		danhSachPhongHocOutput = new DanhSachPhongHocOutput();
+		storage = new DanhSachPhongHocStorage();
+		output = new DanhSachPhongHocOutput();
 	}
-	DanhSachPhongHocControl(MemoryPhongHocDatabase storage, DanhSachPhongHocOutput output) {
+	DanhSachPhongHocControl(DanhSachPhongHocStorage storage, DanhSachPhongHocOutput output) {
         
     }
     
@@ -21,11 +21,11 @@ public class DanhSachPhongHocControl {
     	ArrayList<PhongHocThiNghiem> danhSachPhongHocThiNghiem;
         
     	// Lấy dữ liệu
-    	danhSachPhongHocLyThuyet = danhSachPhongHocStorage.getDanhSachPhongHocLyThuyet();
-    	danhSachPhongHocMayTinh = danhSachPhongHocStorage.getDanhSachPhongHocMayTinh();
-    	danhSachPhongHocThiNghiem = danhSachPhongHocStorage.getDanhSachPhongHocThiNghiem();
+    	danhSachPhongHocLyThuyet = storage.getDanhSachPhongHocLyThuyet();
+    	danhSachPhongHocMayTinh = storage.getDanhSachPhongHocMayTinh();
+    	danhSachPhongHocThiNghiem = storage.getDanhSachPhongHocThiNghiem();
     	
     	// In dữ liệu
-    	danhSachPhongHocOutput.output(danhSachPhongHocLyThuyet, danhSachPhongHocMayTinh, danhSachPhongHocThiNghiem);
+    	output.output(danhSachPhongHocLyThuyet, danhSachPhongHocMayTinh, danhSachPhongHocThiNghiem);
     }
 }

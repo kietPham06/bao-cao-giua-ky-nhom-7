@@ -16,9 +16,9 @@ public class PhongHocOutput {
 	}
 	
 	void output(PhongHocLyThuyet phongHoc) {
+		LocalDate date = LocalDate.parse(phongHoc.getNgayHoatDong());
 	    out.println("============================================");
 	    out.flush();
-		LocalDate date = LocalDate.parse(phongHoc.getNgayHoatDong());
 		out.println("Đã lưu phòng học lý thuyết thành công!!!");
 		out.flush();
 		out.println("Mã phòng: " + phongHoc.maPhong);
@@ -31,9 +31,9 @@ public class PhongHocOutput {
 	}
 	
 	void output(PhongHocMayTinh phongHoc) {
+		LocalDate date = LocalDate.parse(phongHoc.getNgayHoatDong());
 	    out.println("============================================");
 	    out.flush();
-		LocalDate date = LocalDate.parse(phongHoc.getNgayHoatDong());
 		out.println("Đã lưu phòng học máy tính thành công!!!");
 		out.flush();
 		out.println("Mã phòng: " + phongHoc.maPhong);
@@ -45,9 +45,9 @@ public class PhongHocOutput {
 	}
 	
 	void output(PhongHocThiNghiem phongHoc) {
+		LocalDate date = LocalDate.parse(phongHoc.getNgayHoatDong());
 	    out.println("============================================");
 	    out.flush();
-		LocalDate date = LocalDate.parse(phongHoc.getNgayHoatDong());
 		out.println("Đã lưu phòng học thí nghiệm thành công!!!");
 		out.flush();
 		out.println("Mã phòng: " + phongHoc.maPhong);
