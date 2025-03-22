@@ -153,6 +153,8 @@ public class PHInput {
                 // Xử lý trường hợp nhập sai loại phòng học
                 out.println("Lựa chọn không hợp lệ!");
                 out.flush();
+        		out.println("===============================================");
+        		out.flush();
         }
     }
 }

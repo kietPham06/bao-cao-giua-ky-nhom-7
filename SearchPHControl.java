@@ -95,6 +95,8 @@ public class SearchPHControl {
 	        default:
 	            out.println("Lựa chọn không hợp lệ!");
 	            out.flush();
+	    		out.println("===============================================");
+	    		out.flush();
 	    }
 	}
 }

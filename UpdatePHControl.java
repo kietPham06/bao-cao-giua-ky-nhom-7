@@ -211,6 +211,8 @@ public class UpdatePHControl {
             default:
                 out.println("Loại phòng không hợp lệ.");
                 out.flush();
+        		out.println("===============================================");
+        		out.flush();
         }
     }
 }
