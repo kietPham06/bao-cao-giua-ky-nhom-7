@@ -31,6 +31,7 @@ public class PHMenu {
 		deletePHControl = new DeletePHControl();
 		searchPHControl = new SearchPHControl();
 		printDSPHControl = new PrintDSPHControl();
+		pKDCControl = new PKDCControl();
 		aVGAreaPHLTControl = new AVGAreaPHLTControl();
 		updatePHControl = new UpdatePHControl();
 		countPHControl = new CountPHControl();

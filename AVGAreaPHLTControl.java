@@ -30,8 +30,12 @@ public class AVGAreaPHLTControl {
         double dienTichTrungBinh = 0;
         
         if (soPhongHoc == 0) {
+        	out.println("===============================================");
+    		out.flush();
             out.println("Không tìm thấy phòng học lý thuyết");
             out.flush();
+        	out.println("===============================================");
+    		out.flush();
         } else {
             for (PhongHocLyThuyet phongHoc : storage.getDanhSachPhongHocLyThuyet()) {
                 tongDienTich += phongHoc.getDienTich();
