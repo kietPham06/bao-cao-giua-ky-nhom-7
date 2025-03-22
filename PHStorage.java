@@ -14,12 +14,12 @@ public class PHStorage {
 	}
 	
 	// Thêm phòng học máy tính vào bộ nhớ
-	void insertPhongHocLyMayTinh(PhongHocMayTinh phongHoc) {
+	void insertPhongHocMayTinh(PhongHocMayTinh phongHoc) {
 		MemoryPHDb.addPhongHocMayTinh(phongHoc);
 	}
 	
 	// Thêm phòng học thí nghiệm vào bộ nhớ
-	void insertPhongHocLyThiNghiem(PhongHocThiNghiem phongHoc) {
+	void insertPhongHocThiNghiem(PhongHocThiNghiem phongHoc) {
 		MemoryPHDb.addPhongHocThiNghiem(phongHoc);
 	}
 }

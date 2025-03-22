@@ -9,12 +9,30 @@ public class UpdatePHControl {
     UpdatePHOutput output; // Hiển thị thông tin phòng học
 
     // Ô 3: Phương thức
-    UpdatePHControl() { // Constructor khởi tạo các đối tượng cần thiết
-        keyboard = new Scanner(System.in);
-        out = new PrintWriter(System.out);
-        storage = new UpdatePHStorage();
-        output = new UpdatePHOutput();
-    }
+    UpdatePHControl() {
+		keyboard = new Scanner(System.in);
+		out = new PrintWriter(System.out);
+		storage = new UpdatePHStorage();
+		output = new UpdatePHOutput();
+	}
+	
+	// Constructor cho phép sử dụng Scanner và PrintWriter bên ngoài
+    UpdatePHControl(Scanner keyboard, PrintWriter out) {
+		this.keyboard = keyboard;
+		this.out = out;
+	}
+	
+	// Constructor thêm đối tượng lưu trữ dữ liệu phòng học
+    UpdatePHControl(Scanner keyboard, PrintWriter out, UpdatePHStorage storage) {
+		this(keyboard, out);
+		this.storage = storage;
+	}
+	
+	// Constructor đầy đủ với cả đầu ra kết quả tìm kiếm
+    UpdatePHControl(Scanner keyboard, PrintWriter out, UpdatePHStorage storage, UpdatePHOutput output) {
+		this(keyboard, out, storage);
+		this.output = output;
+	}
 
     void update() { // Phương thức chỉnh sửa thông tin phòng học
         String maPhong;

@@ -123,7 +123,7 @@ public class PHInput {
 
                 // Tạo và lưu phòng học máy tính
                 phongHocMayTinh = new PhongHocMayTinh(maPhong, dayNha, dienTich, soBongDen, ngayHoatDong, soLuongMayTinh);
-                storage.insertPhongHocLyMayTinh(phongHocMayTinh);
+                storage.insertPhongHocMayTinh(phongHocMayTinh);
                 output.output(phongHocMayTinh);
                 break;
 
@@ -145,7 +145,7 @@ public class PHInput {
 
                 // Tạo và lưu phòng học thí nghiệm
                 phongHocThiNghiem = new PhongHocThiNghiem(maPhong, dayNha, dienTich, soBongDen, ngayHoatDong, chuyenNganh, sucChua, bonRua);
-                storage.insertPhongHocLyThiNghiem(phongHocThiNghiem);
+                storage.insertPhongHocThiNghiem(phongHocThiNghiem);
                 output.output(phongHocThiNghiem);
                 break;
 

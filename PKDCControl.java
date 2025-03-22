@@ -11,16 +11,16 @@ public class PKDCControl {
 	
 	// Constructor mặc định, khởi tạo các đối tượng cần thiết
 	PKDCControl() {
+		out = new PrintWriter(System.out);
 		storage = new PKDCStorage();
 		output = new PKDCOutput();
-		out = new PrintWriter(System.out);
 	}
 	
 	// Constructor có tham số để tùy chỉnh đối tượng
-	PKDCControl(PKDCStorage storage, PKDCOutput output, PrintWriter out) {
-        this.storage = storage;
+	PKDCControl(PrintWriter out,PKDCStorage storage, PKDCOutput output) {
+		this.out = out;
+		this.storage = storage;
         this.output = output;
-        this.out = out;
     }
     
     // In danh sách phòng không đạt chuẩn
