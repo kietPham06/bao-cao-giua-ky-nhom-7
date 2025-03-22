@@ -39,23 +39,60 @@ public class PKDCControl {
 		out.flush();
     	out.println("Danh sách phòng không đạt chuẩn: ");
     	out.flush();
-    	
-    	for (PhongHocLyThuyet phongHocLyThuyet : danhSachPhongHocLyThuyet) {
-    		if (phongHocLyThuyet.datChuan() == false) {
-    			output.output(phongHocLyThuyet);
-    		}
+    	out.println("===============================================");
+		out.flush();
+    	if (danhSachPhongHocLyThuyet.isEmpty()) {
+        	out.println("Danh sách phòng học lý thuyết rỗng");
+        	out.flush();
+        	out.println("===============================================");
+    		out.flush();
+    	} else {
+	    	for (PhongHocLyThuyet phongHocLyThuyet : danhSachPhongHocLyThuyet) {
+	    		if (!phongHocLyThuyet.datChuan()) {
+	    			output.output(phongHocLyThuyet);
+	    		} else {
+	    			out.println("Không có phòng lý thuyết nào không đạt chuẩn");
+	            	out.flush();
+	            	out.println("===============================================");
+	        		out.flush();
+	    		}
+	    	}
     	}
-    	
-    	for (PhongHocMayTinh phongHocMayTinh : danhSachPhongHocMayTinh) {
-    		if (phongHocMayTinh.datChuan() == false) {
-    			output.output(phongHocMayTinh);
-    		}
+        
+    	if (danhSachPhongHocMayTinh.isEmpty()) {
+        	out.println("Danh sách phòng học máy tính rỗng");
+        	out.flush();
+        	out.println("===============================================");
+    		out.flush();
+    	} else {
+	    	for (PhongHocMayTinh phongHocMayTinh : danhSachPhongHocMayTinh) {
+	    		if (!phongHocMayTinh.datChuan()) {
+	    			output.output(phongHocMayTinh);
+	    		} else {
+	    			out.println("Không có phòng máy tính nào không đạt chuẩn");
+	            	out.flush();
+	            	out.println("===============================================");
+	        		out.flush();
+	    		}
+	    	}
     	}
-    	
-    	for (PhongHocThiNghiem phongHocThiNghiem : danhSachPhongHocThiNghiem) {
-    		if (phongHocThiNghiem.datChuan() == false) {
-    			output.output(phongHocThiNghiem);
-    		}
+        
+    	if (danhSachPhongHocThiNghiem.isEmpty()) {
+        	out.println("Danh sách phòng học thí nghiệm rỗng");
+        	out.flush();
+        	out.println("===============================================");
+    		out.flush();
+    	} else {
+	    	for (PhongHocThiNghiem phongHocThiNghiem : danhSachPhongHocThiNghiem) {
+	    		if (!phongHocThiNghiem.datChuan()) {
+	    			output.output(phongHocThiNghiem);
+	    		} else {
+	    			out.println("Không có phòng thí nghiệm nào không đạt chuẩn");
+	            	out.flush();
+	            	out.println("===============================================");
+	        		out.flush();
+	    		}
+	    	}
     	}
     }
 }
