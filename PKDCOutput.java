@@ -20,6 +20,8 @@ public class PKDCOutput {
 		out.flush();
 		out.println("Ngày hoạt động: " + date);
 		out.flush();
+		out.println("Loại phòng: Lý thuyết");
+		out.flush();
 		out.println("===============================================");
 		out.flush();
 	}
@@ -31,6 +33,8 @@ public class PKDCOutput {
 		out.flush();
 		out.println("Ngày hoạt động: " + date);
 		out.flush();
+		out.println("Loại phòng: Máy tính");
+		out.flush();
 		out.println("===============================================");
 		out.flush();
 	}
@@ -41,6 +45,8 @@ public class PKDCOutput {
 		out.println("Mã phòng: " + phongHoc.maPhong);
 		out.flush();
 		out.println("Ngày hoạt động: " + date);
+		out.flush();
+		out.println("Loại phòng: Thí nghiệm");
 		out.flush();
 		out.println("===============================================");
 		out.flush();
