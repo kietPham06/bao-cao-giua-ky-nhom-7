@@ -7,7 +7,6 @@ public class SetPhongHoc {
     PrintWriter out; // Đối tượng để xuất dữ liệu ra màn hình
     SetPhongHocStorage storage; // Lưu trữ thông tin phòng học
     SetPhongHocOuput output; // Hiển thị thông tin phòng học
-    SearchPhongHocStorage kiemTraPhongHoc; // Tìm kiếm phòng học
 
     // Ô 3: Phương thức
     SetPhongHoc() { // Constructor khởi tạo các đối tượng cần thiết
@@ -15,7 +14,6 @@ public class SetPhongHoc {
         out = new PrintWriter(System.out);
         storage = new SetPhongHocStorage();
         output = new SetPhongHocOuput();
-        kiemTraPhongHoc = new SearchPhongHocStorage();
     }
 
     void setPhongHoc() { // Phương thức chỉnh sửa thông tin phòng học
@@ -53,7 +51,7 @@ public class SetPhongHoc {
 
         switch (loaiPhongHoc) {
             case 1: // Cập nhật phòng lý thuyết
-                phongHocLyThuyet = kiemTraPhongHoc.selectPhongHocLyThuyet(maPhong);
+                phongHocLyThuyet = storage.selectPhongHocLyThuyet(maPhong);
                 if (phongHocLyThuyet == null) {
                     out.println("============================================");
                     out.flush();
@@ -97,7 +95,7 @@ public class SetPhongHoc {
                 break;
 
             case 2: // Cập nhật phòng máy tính
-                phongHocMayTinh = kiemTraPhongHoc.selectPhongHocMayTinh(maPhong);
+                phongHocMayTinh = storage.selectPhongHocMayTinh(maPhong);
                 if (phongHocMayTinh == null) {
                     out.println("============================================");
                     out.flush();
@@ -141,7 +139,7 @@ public class SetPhongHoc {
                 break;
 
             case 3: // Cập nhật phòng thí nghiệm
-                phongHocThiNghiem = kiemTraPhongHoc.selectPhongHocThiNghiem(maPhong);
+                phongHocThiNghiem = storage.selectPhongHocThiNghiem(maPhong);
                 if (phongHocThiNghiem == null) {
                     out.println("============================================");
                     out.flush();

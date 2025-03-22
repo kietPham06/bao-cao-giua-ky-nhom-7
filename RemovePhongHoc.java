@@ -9,7 +9,6 @@ public class RemovePhongHoc {
 	PrintWriter out;
 	RemovePhongHocStorage storage;
 	RemovePhongHocOutput output;
-	SearchPhongHocStorage kiemTraPhongHoc;
 	
 	// Ô 3: Phương thức
 	// Constructor mặc định
@@ -18,7 +17,6 @@ public class RemovePhongHoc {
 		out = new PrintWriter(System.out);
 		storage = new RemovePhongHocStorage();
 		output = new RemovePhongHocOutput();
-		kiemTraPhongHoc = new SearchPhongHocStorage();
 	}
 	
 	// Constructor với Scanner và PrintWriter
@@ -38,13 +36,7 @@ public class RemovePhongHoc {
 		this(keyboard, out, storage);
 		this.output = output;
 	}
-	
-	// Constructor đầy đủ các thành phần
-	RemovePhongHoc(Scanner keyboard, PrintWriter out, RemovePhongHocStorage storage, RemovePhongHocOutput output, SearchPhongHocStorage kiemTraPhongHoc) {
-		this(keyboard, out, storage, output);
-		this.kiemTraPhongHoc = kiemTraPhongHoc;
-	}
-	
+
 	// Phương thức xóa phòng học
 	void removePhongHoc() {
 		String maPhong;
@@ -74,7 +66,7 @@ public class RemovePhongHoc {
 		
 		switch (loaiPhongHoc) {
 			case 1:
-				phongHocLyThuyet = kiemTraPhongHoc.selectPhongHocLyThuyet(maPhong);
+				phongHocLyThuyet = storage.selectPhongHocLyThuyet(maPhong);
 				if (phongHocLyThuyet == null) {
 					out.println("Không tìm thấy phòng học lý thuyết.");
 					out.flush();
@@ -86,7 +78,7 @@ public class RemovePhongHoc {
 				}
 				break;
 			case 2:
-				phongHocMayTinh = kiemTraPhongHoc.selectPhongHocMayTinh(maPhong);
+				phongHocMayTinh = storage.selectPhongHocMayTinh(maPhong);
 				if (phongHocMayTinh == null) {
 					out.println("Không tìm thấy phòng học máy tính.");
 					out.flush();
@@ -98,7 +90,7 @@ public class RemovePhongHoc {
 				}
 				break;
 			case 3:
-				phongHocThiNghiem = kiemTraPhongHoc.selectPhongHocThiNghiem(maPhong);
+				phongHocThiNghiem = storage.selectPhongHocThiNghiem(maPhong);
 				if (phongHocThiNghiem == null) {
 					out.println("Không tìm thấy phòng học thí nghiệm.");
 					out.flush();
