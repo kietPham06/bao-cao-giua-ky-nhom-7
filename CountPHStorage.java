@@ -12,16 +12,16 @@ public class CountPHStorage {
     
     // Lấy danh sách phòng học lý thuyết từ cơ sở dữ liệu
     ArrayList<PhongHocLyThuyet> getDanhSachPhongHocLyThuyet() {
-        return MemoryPHDB.getDanhSachPhongHocLyThuyet();
+        return MemoryPHDb.getDanhSachPhongHocLyThuyet();
     }
     
     // Lấy danh sách phòng học máy tính từ cơ sở dữ liệu
     ArrayList<PhongHocMayTinh> getDanhSachPhongHocMayTinh() {
-        return MemoryPHDB.getDanhSachPhongHocMayTinh();
+        return MemoryPHDb.getDanhSachPhongHocMayTinh();
     }
     
     // Lấy danh sách phòng học thí nghiệm từ cơ sở dữ liệu
     ArrayList<PhongHocThiNghiem> getDanhSachPhongHocThiNghiem() {
-        return MemoryPHDB.getDanhSachPhongHocThiNghiem();
+        return MemoryPHDb.getDanhSachPhongHocThiNghiem();
     }
 }

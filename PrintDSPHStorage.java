@@ -1,16 +1,16 @@
 import java.util.ArrayList;
 
-public class PKDCStorage {
-   
+public class PrintDSPHStorage {
+    
     // Ô 2: Thuộc tính (Không có thuộc tính trong lớp này)
     
     
     // Ô 3: Phương thức
     
     // Constructor mặc định
-    PKDCStorage() {
+    PrintDSPHStorage() {
     }
-
+    
     // Lấy danh sách phòng học lý thuyết từ bộ nhớ
     ArrayList<PhongHocLyThuyet> getDanhSachPhongHocLyThuyet() {
         return MemoryPHDb.getDanhSachPhongHocLyThuyet();

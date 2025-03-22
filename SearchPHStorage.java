@@ -4,19 +4,22 @@ public class SearchPHStorage {
 	
 	
 	// Ô 3: Phương thức (Tìm kiếm phòng học theo loại)
+	SearchPHStorage() {
+		
+	}
 	
 	// Tìm phòng học lý thuyết theo mã phòng
 	PhongHocLyThuyet selectPhongHocLyThuyet(String maPhong) {
-		return MemoryPHDB.searchPhongHocLyThuyet(maPhong);
+		return MemoryPHDb.searchPhongHocLyThuyet(maPhong);
 	}
 	
 	// Tìm phòng học máy tính theo mã phòng
 	PhongHocMayTinh selectPhongHocMayTinh(String maPhong) {
-		return MemoryPHDB.searchPhongHocMayTinh(maPhong);
+		return MemoryPHDb.searchPhongHocMayTinh(maPhong);
 	}
 	
 	// Tìm phòng học thí nghiệm theo mã phòng
 	PhongHocThiNghiem selectPhongHocThiNghiem(String maPhong) {
-		return MemoryPHDB.searchPhongHocThiNghiem(maPhong);
+		return MemoryPHDb.searchPhongHocThiNghiem(maPhong);
 	}
 }

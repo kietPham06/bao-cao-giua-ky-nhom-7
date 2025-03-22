@@ -12,8 +12,12 @@ public class UpdatePHOutput {
 		out = new PrintWriter(System.out);
 	}
 	
+	UpdatePHOutput(PrintWriter out) {
+		this.out = out;
+	}
+	
 	// Hiển thị thông báo cập nhật phòng học lý thuyết
-	void outputPhongHocLyThuyet(PhongHocLyThuyet phongHoc) {
+	void output(PhongHocLyThuyet phongHoc) {
 		out.println("Đã cập nhật thông tin phòng học lý thuyết với mã: " + phongHoc.getMaPhong());
 		out.flush();
 		out.println("===============================================");
@@ -21,7 +25,7 @@ public class UpdatePHOutput {
 	}
 	
 	// Hiển thị thông báo cập nhật phòng học máy tính
-	void outputPhongHocMayTinh(PhongHocMayTinh phongHoc) {
+	void output(PhongHocMayTinh phongHoc) {
 		out.println("Đã cập nhật thông tin phòng học máy tính với mã: " + phongHoc.getMaPhong());
 		out.flush();
 		out.println("===============================================");
@@ -29,7 +33,7 @@ public class UpdatePHOutput {
 	}
 	
 	// Hiển thị thông báo cập nhật phòng học thí nghiệm
-	void outputPhongHocThiNghiem(PhongHocThiNghiem phongHoc) {
+	void output(PhongHocThiNghiem phongHoc) {
 		out.println("Đã cập nhật thông tin phòng học thí nghiệm với mã: " + phongHoc.getMaPhong());
 		out.flush();
 		out.println("===============================================");

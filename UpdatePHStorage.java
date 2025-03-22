@@ -9,33 +9,34 @@ public class UpdatePHStorage {
 		
 	}
 	
-	// Cập nhật phòng học lý thuyết theo mã phòng
-	void setPhongHocLyThuyet(String maPhong, PhongHocLyThuyet phongHocMoi) {
-		MemoryPHDB.setPhongHocLyThuyet(maPhong, phongHocMoi);
-	}
-	
-	// Cập nhật phòng học máy tính theo mã phòng
-	void setPhongHocMayTinh(String maPhong, PhongHocMayTinh phongHocMoi) {
-		MemoryPHDB.setPhongHocMayTinh(maPhong, phongHocMoi);
-	}
-	
-	// Cập nhật phòng học thí nghiệm theo mã phòng
-	void setPhongHocThiNghiem(String maPhong, PhongHocThiNghiem phongHocMoi) {
-		MemoryPHDB.setPhongHocThiNghiem(maPhong, phongHocMoi);
-	}
-	
 	// Tìm phòng học lý thuyết theo mã phòng
 	PhongHocLyThuyet selectPhongHocLyThuyet(String maPhong) {
-		return MemoryPHDB.searchPhongHocLyThuyet(maPhong);
+		return MemoryPHDb.searchPhongHocLyThuyet(maPhong);
 	}
 	
 	// Tìm phòng học máy tính theo mã phòng
 	PhongHocMayTinh selectPhongHocMayTinh(String maPhong) {
-		return MemoryPHDB.searchPhongHocMayTinh(maPhong);
+		return MemoryPHDb.searchPhongHocMayTinh(maPhong);
 	}
 	
 	// Tìm phòng học thí nghiệm theo mã phòng
 	PhongHocThiNghiem selectPhongHocThiNghiem(String maPhong) {
-		return MemoryPHDB.searchPhongHocThiNghiem(maPhong);
+		return MemoryPHDb.searchPhongHocThiNghiem(maPhong);
 	}
+	
+	// Cập nhật phòng học lý thuyết theo mã phòng
+	void updatePhongHocLyThuyet(String maPhong, PhongHocLyThuyet phongHocMoi) {
+		MemoryPHDb.setPhongHocLyThuyet(maPhong, phongHocMoi);
+	}
+	
+	// Cập nhật phòng học máy tính theo mã phòng
+	void updatePhongHocMayTinh(String maPhong, PhongHocMayTinh phongHocMoi) {
+		MemoryPHDb.setPhongHocMayTinh(maPhong, phongHocMoi);
+	}
+	
+	// Cập nhật phòng học thí nghiệm theo mã phòng
+	void updatePhongHocThiNghiem(String maPhong, PhongHocThiNghiem phongHocMoi) {
+		MemoryPHDb.setPhongHocThiNghiem(maPhong, phongHocMoi);
+	}
+	
 }

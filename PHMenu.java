@@ -10,12 +10,12 @@ public class PHMenu {
 	String prompt; // Biến để lưu prompt hiển thị cho người dùng nhập lệnh
 
 	// Chức năng
-	PHInput phInput; // Chức năng nhập thông tin phòng học
+	PHInput pHInput; // Chức năng nhập thông tin phòng học
 	DeletePHControl deletePHControl; // Chức năng xóa phòng học
 	SearchPHControl searchPHControl; // Chức năng tìm kiếm phòng học
-	PrintPHListControl printPHControl; // Quản lý danh sách phòng học
-	PKDCControl pkdcControl; // Quản lý các phòng không đạt chuẩn
-	AVGAreaPHLTControl avgAreaPHLTControl; // Tính diện tích trung bình phòng lý thuyết
+	PrintDSPHControl printDSPHControl; // Quản lý danh sách phòng học
+	PKDCControl pKDCControl; // Quản lý các phòng không đạt chuẩn
+	AVGAreaPHLTControl aVGAreaPHLTControl; // Tính diện tích trung bình phòng lý thuyết
 	UpdatePHControl updatePHControl; // Chức năng sửa thông tin phòng học
 	CountPHControl countPHControl; // Thống kê số lượng phòng theo loại
 
@@ -27,11 +27,11 @@ public class PHMenu {
 		keyboard = new Scanner(System.in);
 		prompt = ">";
 		// Khởi tạo các chức năng
-		phInput = new PHInput();
+		pHInput = new PHInput();
 		deletePHControl = new DeletePHControl();
 		searchPHControl = new SearchPHControl();
-		printPHControl = new PrintPHListControl();
-		avgAreaPHLTControl = new AVGAreaPHLTControl();
+		printDSPHControl = new PrintDSPHControl();
+		aVGAreaPHLTControl = new AVGAreaPHLTControl();
 		updatePHControl = new UpdatePHControl();
 		countPHControl = new CountPHControl();
 	}
@@ -44,50 +44,50 @@ public class PHMenu {
 	}
 
 	// Constructor với tham số thêm chức năng nhập phòng học
-	PHMenu(PrintWriter out, Scanner keyboard, String prompt, PHInput phInput) {
+	PHMenu(PrintWriter out, Scanner keyboard, String prompt, PHInput pHInput) {
 		this(out, keyboard, prompt);
-		this.phInput = phInput;
+		this.pHInput = pHInput;
 	}
 
 	// Constructor với tham số thêm chức năng xóa phòng học
-	PHMenu(PrintWriter out, Scanner keyboard, String prompt, PHInput phInput, DeletePHControl deletePHControl) {
-		this(out, keyboard, prompt, phInput);
+	PHMenu(PrintWriter out, Scanner keyboard, String prompt, PHInput pHInput, DeletePHControl deletePHControl) {
+		this(out, keyboard, prompt, pHInput);
 		this.deletePHControl = deletePHControl;
 	}
 
 	// Constructor với tham số thêm chức năng quản lý danh sách phòng học
-	PHMenu(PrintWriter out, Scanner keyboard, String prompt, PHInput phInput, DeletePHControl deletePHControl, PrintPHListControl printPHControl) {
-		this(out, keyboard, prompt, phInput, deletePHControl);
-		this.printPHControl = printPHControl;
+	PHMenu(PrintWriter out, Scanner keyboard, String prompt, PHInput pHInput, DeletePHControl deletePHControl, PrintDSPHControl printDSPHControl) {
+		this(out, keyboard, prompt, pHInput, deletePHControl);
+		this.printDSPHControl = printDSPHControl;
 	}
 
 	// Constructor với tham số thêm chức năng tìm kiếm phòng học
-	PHMenu(PrintWriter out, Scanner keyboard, String prompt, PHInput phInput, DeletePHControl deletePHControl, PrintPHListControl printPHControl, SearchPHControl searchPHControl) {
-		this(out, keyboard, prompt, phInput, deletePHControl, printPHControl);
+	PHMenu(PrintWriter out, Scanner keyboard, String prompt, PHInput pHInput, DeletePHControl deletePHControl, PrintDSPHControl printDSPHControl, SearchPHControl searchPHControl) {
+		this(out, keyboard, prompt, pHInput, deletePHControl, printDSPHControl);
 		this.searchPHControl = searchPHControl;
 	}
 
 	// Constructor với tham số thêm chức năng quản lý phòng không đạt chuẩn
-	PHMenu(PrintWriter out, Scanner keyboard, String prompt, PHInput phInput, DeletePHControl deletePHControl, PrintPHListControl printPHControl, SearchPHControl searchPHControl, PKDCControl pkdcControl) {
-		this(out, keyboard, prompt, phInput, deletePHControl, printPHControl, searchPHControl);
-		this.pkdcControl = pkdcControl;
+	PHMenu(PrintWriter out, Scanner keyboard, String prompt, PHInput pHInput, DeletePHControl deletePHControl, PrintDSPHControl printDSPHControl, SearchPHControl searchPHControl, PKDCControl pKDCControl) {
+		this(out, keyboard, prompt, pHInput, deletePHControl, printDSPHControl, searchPHControl);
+		this.pKDCControl = pKDCControl;
 	}
 
 	// Constructor với tham số thêm chức năng tính diện tích trung bình phòng lý thuyết
-	PHMenu(PrintWriter out, Scanner keyboard, String prompt, PHInput phInput, DeletePHControl deletePHControl, PrintPHListControl printPHControl, SearchPHControl searchPHControl, PKDCControl pkdcControl, AVGAreaPHLTControl avgAreaPHLTControl) {
-		this(out, keyboard, prompt, phInput, deletePHControl, printPHControl, searchPHControl, pkdcControl);
-		this.avgAreaPHLTControl = avgAreaPHLTControl;
+	PHMenu(PrintWriter out, Scanner keyboard, String prompt, PHInput pHInput, DeletePHControl deletePHControl, PrintDSPHControl printDSPHControl, SearchPHControl searchPHControl, PKDCControl pKDCControl, AVGAreaPHLTControl aVGAreaPHLTControl) {
+		this(out, keyboard, prompt, pHInput, deletePHControl, printDSPHControl, searchPHControl, pKDCControl);
+		this.aVGAreaPHLTControl = aVGAreaPHLTControl;
 	}
 
 	// Constructor với tham số thêm chức năng sửa thông tin phòng học
-	PHMenu(PrintWriter out, Scanner keyboard, String prompt, PHInput phInput, DeletePHControl deletePHControl, PrintPHListControl printPHControl, SearchPHControl searchPHControl, PKDCControl pkdcControl, AVGAreaPHLTControl avgAreaPHLTControl, UpdatePHControl updatePHControl) {
-		this(out, keyboard, prompt, phInput, deletePHControl, printPHControl, searchPHControl, pkdcControl, avgAreaPHLTControl);
+	PHMenu(PrintWriter out, Scanner keyboard, String prompt, PHInput pHInput, DeletePHControl deletePHControl, PrintDSPHControl printDSPHControl, SearchPHControl searchPHControl, PKDCControl pKDCControl, AVGAreaPHLTControl aVGAreaPHLTControl, UpdatePHControl updatePHControl) {
+		this(out, keyboard, prompt, pHInput, deletePHControl, printDSPHControl, searchPHControl, pKDCControl, aVGAreaPHLTControl);
 		this.updatePHControl = updatePHControl;
 	}
 
 	// Constructor với tham số thêm chức năng thống kê số lượng phòng
-	PHMenu(PrintWriter out, Scanner keyboard, String prompt, PHInput phInput, DeletePHControl deletePHControl, PrintPHListControl printPHControl, SearchPHControl searchPHControl, PKDCControl pkdcControl, AVGAreaPHLTControl avgAreaPHLTControl, UpdatePHControl updatePHControl, CountPHControl countPHControl) {
-		this(out, keyboard, prompt, phInput, deletePHControl, printPHControl, searchPHControl, pkdcControl, avgAreaPHLTControl, updatePHControl);
+	PHMenu(PrintWriter out, Scanner keyboard, String prompt, PHInput pHInput, DeletePHControl deletePHControl, PrintDSPHControl printDSPHControl, SearchPHControl searchPHControl, PKDCControl pKDCControl, AVGAreaPHLTControl aVGAreaPHLTControl, UpdatePHControl updatePHControl, CountPHControl countPHControl) {
+		this(out, keyboard, prompt, pHInput, deletePHControl, printDSPHControl, searchPHControl, pKDCControl, aVGAreaPHLTControl, updatePHControl);
 		this.countPHControl = countPHControl;
 	}
 
@@ -223,7 +223,7 @@ public class PHMenu {
 
 	// Các phương thức chức năng
 	void add() {
-		phInput.input();
+		pHInput.input();
 	}
 
 	void update() {
@@ -239,11 +239,11 @@ public class PHMenu {
 	}
 
 	void print() {
-		printPHControl.print();
+		printDSPHControl.print();
 	}
 
 	void substandard() {
-		pkdcControl.pkcd();
+		pKDCControl.pkdc();
 	}
 
 	void count() {
@@ -251,6 +251,7 @@ public class PHMenu {
 	}
 
 	void average() {
-		avgAreaPHLTControl.avgArea();
+		aVGAreaPHLTControl.avgArea();
 	}
+
 }

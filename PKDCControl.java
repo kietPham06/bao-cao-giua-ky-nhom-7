@@ -24,7 +24,7 @@ public class PKDCControl {
     }
     
     // In danh sách phòng không đạt chuẩn
-    void pkcd() {
+    void pkdc() {
     	ArrayList<PhongHocLyThuyet> danhSachPhongHocLyThuyet;
     	ArrayList<PhongHocMayTinh> danhSachPhongHocMayTinh;
     	ArrayList<PhongHocThiNghiem> danhSachPhongHocThiNghiem;

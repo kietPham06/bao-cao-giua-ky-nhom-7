@@ -13,6 +13,10 @@ public class SearchPHOutput {
 		out = new PrintWriter(System.out);
 	}
 	
+	SearchPHOutput(PrintWriter out) {
+		this.out = out;
+	}
+	
 	// Hiển thị thông tin phòng học lý thuyết
 	void output(PhongHocLyThuyet phongHoc) {
 		LocalDate date = LocalDate.parse(phongHoc.getNgayHoatDong());

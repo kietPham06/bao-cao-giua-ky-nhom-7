@@ -89,8 +89,8 @@ public class UpdatePHControl {
             		out.flush();
 
                     phongHocLyThuyet = new PhongHocLyThuyet(maPhong, dayNha, dienTich, soBongDen, ngayHoatDong, mayChieu);
-                    storage.setPhongHocLyThuyet(maPhong, phongHocLyThuyet);
-                    output.outputPhongHocLyThuyet(phongHocLyThuyet);
+                    storage.updatePhongHocLyThuyet(maPhong, phongHocLyThuyet);
+                    output.output(phongHocLyThuyet);
                 }
                 break;
 
@@ -133,8 +133,8 @@ public class UpdatePHControl {
             		out.flush();
 
                     phongHocMayTinh = new PhongHocMayTinh(maPhong, dayNha, dienTich, soBongDen, ngayHoatDong, soLuongMayTinh);
-                    storage.setPhongHocMayTinh(maPhong, phongHocMayTinh);
-                    output.outputPhongHocMayTinh(phongHocMayTinh);
+                    storage.updatePhongHocMayTinh(maPhong, phongHocMayTinh);
+                    output.output(phongHocMayTinh);
                 }
                 break;
 
@@ -186,8 +186,8 @@ public class UpdatePHControl {
             		out.flush();
                     
                     phongHocThiNghiem = new PhongHocThiNghiem(maPhong, dayNha, dienTich, soBongDen, ngayHoatDong, chuyenNganh, sucChua, bonRua);
-                    storage.setPhongHocThiNghiem(maPhong, phongHocThiNghiem);
-                    output.outputPhongHocThiNghiem(phongHocThiNghiem);
+                    storage.updatePhongHocThiNghiem(maPhong, phongHocThiNghiem);
+                    output.output(phongHocThiNghiem);
                 }
                 break;
             default:

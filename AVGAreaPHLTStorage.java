@@ -6,9 +6,12 @@ public class AVGAreaPHLTStorage {
     
     
     // Ô 3: Phương thức
-    
+    AVGAreaPHLTStorage() {
+		
+	}
+	
     // Lấy danh sách phòng học lý thuyết từ bộ nhớ
     ArrayList<PhongHocLyThuyet> getDanhSachPhongHocLyThuyet() {
-        return MemoryPHDB.getDanhSachPhongHocLyThuyet();
+        return MemoryPHDb.getDanhSachPhongHocLyThuyet();
     }
 }
