@@ -14,16 +14,26 @@ public class MemoryPHDB {
 	// Ô 2 - Fields
 	private static ArrayList<PhongHoc> phDB;
 	
-	// Static Block Code
+	// Static block code
 	static {
 		phDB = new ArrayList<PhongHoc>();
 	// Tạo object để test
-		PhongHoc phongMayTinh = new PHMayTinh("MT001", "A1", 60.0, 6, new Date(), 30); // Không đạt
-		PhongHoc phongLyThuyet = new PHLyThuyet("LT001", "B2", 50.0, 4, new Date(), true); // Không đạt
-		PhongHoc phongThiNghiem = new PHThiNghiem("TN001", "C3", 80.0, 8, new Date(), "Hóa học", 30, false); // Không đạt
+		phDB.add(new PHMayTinh("MT001", "A1", 60.0, 6, new Date(), 30));  // Đạt: đủ sáng, đủ diện tích/máy
+		phDB.add(new PHMayTinh("MT002", "A2", 45.0, 3, new Date(), 40));  // Không đạt: thiếu sáng, thiếu diện tích/máy
+		phDB.add(new PHLyThuyet("LT001", "B1", 50.0, 5, new Date(), true));  // Đạt: đủ sáng, có máy chiếu
+		phDB.add(new PHLyThuyet("LT002", "B2", 40.0, 2, new Date(), false)); // Không đạt: thiếu sáng, không máy chiếu
+		phDB.add(new PHThiNghiem("TN001", "C1", 80.0, 8, new Date(), "Hóa học", 30, true));  // Đạt: đủ sáng, có bồn rửa
+		phDB.add(new PHThiNghiem("TN002", "C2", 70.0, 5, new Date(), "Sinh học", 25, false)); // Không đạt: thiếu sáng, không bồn rửa
 	}
 	
 	// Ô 3 - Methods
-	// Chức năng
+	public static void insert(PhongHoc ph) {
+		phDB.add(ph);
+	}
+	
+	public static ArrayList<PhongHoc> getDSPH() {
+		return phDB;
+	}
+	
 	
 }

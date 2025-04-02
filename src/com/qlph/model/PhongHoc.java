@@ -1,5 +1,6 @@
 package com.qlph.model;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 // Superclass
@@ -72,6 +73,22 @@ public class PhongHoc {
 
 	public void setNgayHoatDong(Date ngayHoatDong) {
 		this.ngayHoatDong = ngayHoatDong;
+	}
+	
+	public String getLoaiPhong() {
+		return null;
+	}
+
+	// toString()
+	@Override
+	public String toString() {
+		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+		String formattedDate = formatter.format(ngayHoatDong);
+		return "Mã phòng: " + maPhong +
+				"\nDãy nhà: " + dayNha +
+				"\nDiện tích: " + dienTich +
+				"\nSố bóng đèn: "+ soBongDen +
+				"\nNgày hoạt động: " + formattedDate;
 	}
 	
 	

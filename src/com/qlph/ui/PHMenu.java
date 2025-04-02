@@ -3,12 +3,17 @@ package com.qlph.ui;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
+import com.qlph.control.PHAddControl;
+import com.qlph.control.PHPrintControl;
+
 public class PHMenu {
 	
 	// Ô 2 - Fields
 	private Scanner keyboard;
 	private PrintWriter out;
 	private String prompt;
+	private PHAddControl phAddControl;
+	private PHPrintControl phPrintControl;
 	
 	// Ô 3 - Methods
 	// Default Constructor
@@ -22,6 +27,14 @@ public class PHMenu {
 		this.keyboard = keyboard;
 		this.out = out;
 		this.prompt = prompt;
+	}
+	
+	public void setPHAddControl(PHAddControl phAddControl) {
+		this.phAddControl = phAddControl;
+	}
+	
+	public void setPHPrintcontrol(PHPrintControl phPrintControl) {
+		this.phPrintControl = phPrintControl;
 	}
 	
 	public void controlLoop() {
@@ -92,7 +105,6 @@ public class PHMenu {
 	}
 	
 	private void help() {
-
 		out.println("===============================================");
 		out.flush();
 		out.println("|               USER HELP MENU                |");
@@ -123,7 +135,6 @@ public class PHMenu {
 		out.flush();
 		out.println("===============================================");
 		out.flush();
-		
 	}
 	
 	private void about() {
@@ -156,12 +167,11 @@ public class PHMenu {
 
 	private void add() {
 		// TODO Auto-generated method stub
-		
+		phAddControl.add();
 	}
 
 	private void update() {
 		// TODO Auto-generated method stub
-		
 	}
 
 	private void delete() {
@@ -176,7 +186,7 @@ public class PHMenu {
 
 	private void print() {
 		// TODO Auto-generated method stub
-		
+		phPrintControl.print();		
 	}
 
 	private void count() {
@@ -193,11 +203,6 @@ public class PHMenu {
 		// TODO Auto-generated method stub
 		
 	}
-
-
-
-
 	
-	
-	
+
 }

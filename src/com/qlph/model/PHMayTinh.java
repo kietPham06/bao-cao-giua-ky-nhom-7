@@ -35,5 +35,17 @@ public class PHMayTinh extends PhongHoc {
 		this.soLuongMayTinh = soLuongMayTinh;
 	}
 	
+	@Override
+	public String getLoaiPhong() {
+		return "Máy tính";
+	}
+
+	// toString()
+	@Override
+	public String toString() {
+		return super.toString() + "\nSố lượng máy tính: " + soLuongMayTinh +
+				"\nLoại phòng: Máy tính";
+	}
+	
 	
 }

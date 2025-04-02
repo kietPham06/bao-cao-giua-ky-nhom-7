@@ -35,5 +35,17 @@ public class PHLyThuyet extends PhongHoc {
 		this.isMayChieu = isMayChieu;
 	}
 	
+	@Override
+	public String getLoaiPhong() {
+		return "Lý thuyết";
+	}
+
+	// toString()
+	@Override
+	public String toString() {
+		return super.toString() + "\nMáy Chiếu: " + isMayChieu +
+				"\nLoại phòng: Lý thuyết";
+	}
+	
 	
 }

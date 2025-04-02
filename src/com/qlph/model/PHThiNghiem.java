@@ -55,5 +55,19 @@ public class PHThiNghiem extends PhongHoc {
 		this.isBonRua = isBonRua;
 	}
 	
+	@Override
+	public String getLoaiPhong() {
+		return "Thí Nghiệm";
+	}
+
+	// toString()
+	@Override
+	public String toString() {
+		return super.toString() + "\nChuyên ngành: " + chuyenNganh +
+				"\nSức chứa: " + sucChua +
+				"\nBồn rửa: " + isBonRua +
+				"\nLoại phòng: Thí nghiệm";
+	}
+	
 	
 }
