@@ -89,14 +89,14 @@ public class PHAddInput {
 	}
 	
 	private PhongHoc inputPHLT(String maPhong, String dayNha, double dienTich, int soBongDen, Date ngayHoatDongJava) {
-		boolean isMayChieu;
+		boolean hasMayChieu;
 		PHLyThuyet phLT;
 		
 		out.print("Có máy chiếu (true/false): ");
 		out.flush();
-		isMayChieu = keyboard.nextBoolean();
+		hasMayChieu = keyboard.nextBoolean();
 		
-		phLT = new PHLyThuyet(maPhong, dayNha, dienTich, soBongDen, ngayHoatDongJava, isMayChieu);
+		phLT = new PHLyThuyet(maPhong, dayNha, dienTich, soBongDen, ngayHoatDongJava, hasMayChieu);
 		return phLT;
 	}
 	
@@ -115,7 +115,7 @@ public class PHAddInput {
 	private PhongHoc inputPHTN(String maPhong, String dayNha, double dienTich, int soBongDen, Date ngayHoatDongJava) {
 		String chuyenNganh;
 		int sucChua;
-		boolean isBonRua;
+		boolean hasBonRua;
 		PHThiNghiem phTN;
 		
 		out.print("Chuyên ngành: ");
@@ -128,9 +128,9 @@ public class PHAddInput {
 		
 		out.print("Có bồn rửa (true/false): ");
 		out.flush();
-		isBonRua = keyboard.nextBoolean();
+		hasBonRua = keyboard.nextBoolean();
 		
-		phTN = new PHThiNghiem(maPhong, dayNha, dienTich, soBongDen, ngayHoatDongJava, chuyenNganh, sucChua, isBonRua);
+		phTN = new PHThiNghiem(maPhong, dayNha, dienTich, soBongDen, ngayHoatDongJava, chuyenNganh, sucChua, hasBonRua);
 		return phTN;
 	}
 	

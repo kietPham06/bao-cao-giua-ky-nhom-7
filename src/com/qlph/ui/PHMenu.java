@@ -3,6 +3,7 @@ package com.qlph.ui;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
+import com.qlph.control.PHLTAVGControl;
 import com.qlph.control.PHAddControl;
 import com.qlph.control.PHPrintControl;
 
@@ -14,7 +15,7 @@ public class PHMenu {
 	private String prompt;
 	private PHAddControl phAddControl;
 	private PHPrintControl phPrintControl;
-	
+	private PHLTAVGControl phltavgControl;
 	// Ô 3 - Methods
 	// Default Constructor
 	public PHMenu() {
@@ -35,6 +36,10 @@ public class PHMenu {
 	
 	public void setPHPrintcontrol(PHPrintControl phPrintControl) {
 		this.phPrintControl = phPrintControl;
+	}
+	
+	public void setPHLTAVGControl( PHLTAVGControl phltavgControl) {
+		this.phltavgControl = phltavgControl;
 	}
 	
 	public void controlLoop() {
@@ -127,7 +132,7 @@ public class PHMenu {
 		out.flush();
 		out.println("| [COUNT]   | Tổng số lượng phòng học từng loại|");
 		out.flush();
-		out.println("| [FILTER]  | Xuất ra các phòng không đạt chuẩn|");
+		out.println("| [FILTER]  | Lọc ra các phòng không đạt chuẩn|");
 		out.flush();
 		out.println("| [AVERAGE] | Diện tích trung bình phòng lý thuyết |");
 		out.flush();
@@ -201,7 +206,7 @@ public class PHMenu {
 
 	private void average() {
 		// TODO Auto-generated method stub
-		
+		phltavgControl.average();
 	}
 	
 

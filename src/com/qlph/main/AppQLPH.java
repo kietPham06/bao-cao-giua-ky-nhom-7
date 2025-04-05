@@ -3,14 +3,18 @@ package com.qlph.main;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
+import com.qlph.control.PHLTAVGControl;
 import com.qlph.control.PHAddControl;
 import com.qlph.control.PHPrintControl;
+import com.qlph.database.PHLTAVGDAO;
 import com.qlph.database.PHAddDAO;
 import com.qlph.database.PHPrintDAO;
+import com.qlph.ui.PHLTAVGOutput;
 import com.qlph.ui.PHAddInput;
 import com.qlph.ui.PHAddOutput;
 import com.qlph.ui.PHMenu;
 import com.qlph.ui.PHPrintOutput;
+import com.qlph.utils.PHLTAVGCalculator;
 
 public class AppQLPH {
 
@@ -32,8 +36,11 @@ public class AppQLPH {
 		PHPrintOutput phPrintOutput;
 		PHPrintDAO phPrintDAO;
 		
-		//... <== Thêm vào đây
-		
+		// Chức năng tính trung bình diện tích phòng học lý thuyết
+		PHLTAVGControl phltavgControl;
+		PHLTAVGDAO phltavgdao;
+		PHLTAVGOutput phltavgOutput;
+		PHLTAVGCalculator phltavgCalculator;
 		
 		// Hiển thị menu
 		PHMenu menu;
@@ -54,8 +61,11 @@ public class AppQLPH {
 		phPrintOutput = new PHPrintOutput(out);
 		phPrintControl = new PHPrintControl(phPrintDAO, phPrintOutput);
 	
-		//... <== Thêm vào đây
-		
+		// Chức năng tính trung bình diện tích phòng học lý thuyết
+		phltavgdao = new PHLTAVGDAO();
+		phltavgCalculator = new PHLTAVGCalculator();
+		phltavgOutput = new PHLTAVGOutput(out);
+		phltavgControl = new PHLTAVGControl(phltavgdao, phltavgCalculator, phltavgOutput);
 		
 		// Hiển thị menu
 		menu = new PHMenu(keyboard, out, prompt);
@@ -65,6 +75,9 @@ public class AppQLPH {
 		
 		// Gửi thông điệp đến object PHPrintControl
 		menu.setPHPrintcontrol(phPrintControl);
+		
+		//  Gửi thông điệp đến object PHLTAVGControl
+		menu.setPHLTAVGControl(phltavgControl);
 		
 		// Hiển thị tiêu đề
 		out.println("===============================================");
@@ -78,4 +91,5 @@ public class AppQLPH {
 		menu.controlLoop();
 	}
 
+	
 }
