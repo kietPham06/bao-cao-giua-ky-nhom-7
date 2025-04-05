@@ -6,6 +6,7 @@ import java.util.Scanner;
 import com.qlph.control.PHLTAVGControl;
 import com.qlph.control.PHAddControl;
 import com.qlph.control.PHPrintControl;
+import com.qlph.control.PHDeleteControl;
 
 public class PHMenu {
 	
@@ -16,6 +17,7 @@ public class PHMenu {
 	private PHAddControl phAddControl;
 	private PHPrintControl phPrintControl;
 	private PHLTAVGControl phltavgControl;
+	private PHDeleteControl phDeleteControl;
 	// Ô 3 - Methods
 	// Default Constructor
 	public PHMenu() {
@@ -42,6 +44,10 @@ public class PHMenu {
 		this.phltavgControl = phltavgControl;
 	}
 	
+	public void setPHDeleteControl(PHDeleteControl phDeleteControl) {
+		this.phDeleteControl = phDeleteControl;
+	}
+
 	public void controlLoop() {
 		out.println("Gõ lệnh \"help\" để được hỗ trợ!");
 		out.flush();
@@ -181,7 +187,7 @@ public class PHMenu {
 
 	private void delete() {
 		// TODO Auto-generated method stub
-		
+		phDeleteControl.delete();
 	}
 
 	private void search() {

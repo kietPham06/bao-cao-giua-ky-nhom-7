@@ -37,7 +37,7 @@ public class PHMayTinh extends PhongHoc {
 	
 	@Override
 	public String getLoaiPhong() {
-		return "Máy tính";
+		return "MT";
 	}
 
 	// toString()

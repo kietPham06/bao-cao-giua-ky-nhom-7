@@ -33,9 +33,20 @@ public class PHPrintOutput {
 	    out.println("==================================================================================================");
 	    out.flush();
 	    for (PhongHoc ph : dsPH) {
+	    	String loaiPhong = ph.getLoaiPhong();
+
+	        // Chuyển đổi loại phòng từ mã viết tắt
+	        if (loaiPhong.equals("LT")) {
+	            loaiPhong = "Lý thuyết";
+	        } else if (loaiPhong.equals("MT")) {
+	            loaiPhong = "Máy tính";
+	        } else if (loaiPhong.equals("TN")) {
+	            loaiPhong = "Thí nghiệm";
+	        }
+	        
 	        out.printf("%-15s %-12s %-15.2f %-15d %-18s %-15s%n", 
 	            ph.getMaPhong(), ph.getDayNha(), ph.getDienTich(), ph.getSoBongDen(), 
-	            formatter.format(ph.getNgayHoatDong()), ph.getLoaiPhong());
+	            formatter.format(ph.getNgayHoatDong()), loaiPhong);
 	    }
 	    out.println("==================================================================================================");
 	    out.flush();

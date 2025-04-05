@@ -6,14 +6,18 @@ import java.util.Scanner;
 import com.qlph.control.PHLTAVGControl;
 import com.qlph.control.PHAddControl;
 import com.qlph.control.PHPrintControl;
+import com.qlph.control.PHDeleteControl;
 import com.qlph.database.PHLTAVGDAO;
 import com.qlph.database.PHAddDAO;
 import com.qlph.database.PHPrintDAO;
+import com.qlph.database.PHDeleteDAO;
 import com.qlph.ui.PHLTAVGOutput;
 import com.qlph.ui.PHAddInput;
 import com.qlph.ui.PHAddOutput;
 import com.qlph.ui.PHMenu;
 import com.qlph.ui.PHPrintOutput;
+import com.qlph.ui.PHDeleteInput;
+import com.qlph.ui.PHDeleteOutput;
 import com.qlph.utils.PHLTAVGCalculator;
 
 public class AppQLPH {
@@ -36,11 +40,18 @@ public class AppQLPH {
 		PHPrintOutput phPrintOutput;
 		PHPrintDAO phPrintDAO;
 		
-		// Chức năng tính trung bình diện tích phòng học lý thuyết
-		PHLTAVGControl phltavgControl;
+		// Chức năng tính trung bình diện tích phòng lý thuyết
 		PHLTAVGDAO phltavgdao;
-		PHLTAVGOutput phltavgOutput;
 		PHLTAVGCalculator phltavgCalculator;
+		PHLTAVGOutput phltavgOutput;
+		PHLTAVGControl phltavgControl;
+		
+		
+		// Chức năng xóa
+		PHDeleteDAO phDeleteDAO;
+		PHDeleteInput phDeleteInput;
+		PHDeleteOutput phDeleteOutput;
+		PHDeleteControl phDeleteControl;
 		
 		// Hiển thị menu
 		PHMenu menu;
@@ -61,11 +72,17 @@ public class AppQLPH {
 		phPrintOutput = new PHPrintOutput(out);
 		phPrintControl = new PHPrintControl(phPrintDAO, phPrintOutput);
 	
-		// Chức năng tính trung bình diện tích phòng học lý thuyết
+		// Chức năng tính trung bình diện tích phòng lý thuyết
 		phltavgdao = new PHLTAVGDAO();
 		phltavgCalculator = new PHLTAVGCalculator();
 		phltavgOutput = new PHLTAVGOutput(out);
 		phltavgControl = new PHLTAVGControl(phltavgdao, phltavgCalculator, phltavgOutput);
+		
+		// Chức năng xóa
+		phDeleteDAO = new PHDeleteDAO();
+		phDeleteInput = new PHDeleteInput(keyboard, out);
+		phDeleteOutput = new PHDeleteOutput(out);
+		phDeleteControl = new PHDeleteControl(phDeleteDAO, phDeleteInput, phDeleteOutput);
 		
 		// Hiển thị menu
 		menu = new PHMenu(keyboard, out, prompt);
@@ -78,6 +95,9 @@ public class AppQLPH {
 		
 		//  Gửi thông điệp đến object PHLTAVGControl
 		menu.setPHLTAVGControl(phltavgControl);
+		
+		// Gửi thông điệp đến object PHRemoveControl
+		menu.setPHDeleteControl(phDeleteControl);
 		
 		// Hiển thị tiêu đề
 		out.println("===============================================");

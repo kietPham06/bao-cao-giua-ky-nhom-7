@@ -37,7 +37,7 @@ public class PHLyThuyet extends PhongHoc {
 	
 	@Override
 	public String getLoaiPhong() {
-		return "Lý thuyết";
+		return "LT";
 	}
 
 	// toString()

@@ -35,5 +35,14 @@ public class MemoryPHDB {
 		return phDB;
 	}
 	
+	public static boolean remove(String maPhong, String loaiPhong) {
+		for (PhongHoc ph: phDB) {
+			if (ph.getMaPhong().equalsIgnoreCase(maPhong) && ph.getLoaiPhong().equalsIgnoreCase(loaiPhong)) {
+				phDB.remove(ph);
+				return true; // Trả về true để thông báo nếu xóa thành công
+			}
+		}
+		return false;
+	}
 	
 }
